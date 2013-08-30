@@ -1,5 +1,0 @@
-it/sevenbits/entity/Title.class
-it/sevenbits/controllers/AppendMessageControler.class
-it/sevenbits/entity/Message.class
-it/sevenbits/entity/hibernate/MessageEntity.class
-it/sevenbits/entity/hibernate/TitleEntity.class
