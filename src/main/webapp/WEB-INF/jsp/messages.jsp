@@ -21,7 +21,7 @@
                         <c:forEach items="${messages}" var="message" varStatus="status">
                             <tr>
                                 <td class="message">
-                                    <c:out value="message" />
+                                    <c:out value="${message}" />
                                 </td>
                             </tr>
                         </c:forEach>
