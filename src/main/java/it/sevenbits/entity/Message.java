@@ -11,6 +11,11 @@ public class Message {
     public Message() {
     }
 
+    public Message(final Title title, final String textMessage) {
+        this.title = title;
+        this.textMessage = textMessage;
+    }
+
     public String getTextMessage() {
         return textMessage;
     }

@@ -1,6 +1,7 @@
 package it.sevenbits.entity.hibernate;
 
 import it.sevenbits.entity.Message;
+import it.sevenbits.entity.Title;
 
 import javax.persistence.*;
 
@@ -13,14 +14,24 @@ import javax.persistence.*;
  */
 
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name="findAllMessagesOfTitle",
+                query="select m from MessageEntity m where m.titleEntity.id = :titleId"
+        )
+})
 @Table(name="message")
 public class MessageEntity extends Message {
     public MessageEntity() {
         super();
     }
 
+    public MessageEntity(final TitleEntity title, final String textMessage) {
+        super(title, textMessage);
+    }
+
     @ManyToOne
-    @JoinColumn(name="title_id")
+    @JoinColumn(name="titleId")
     public TitleEntity getTitleEntity() {
         return titleEntity;
     }
@@ -44,6 +55,7 @@ public class MessageEntity extends Message {
 
     public void setTitleEntity(TitleEntity titleEntity) {
         this.titleEntity = titleEntity;
+        super.setTitle(titleEntity);
     }
 
     private Long id;

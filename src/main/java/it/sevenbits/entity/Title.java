@@ -11,6 +11,10 @@ public class Title {
     public Title() {
     }
 
+    public Title(final String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

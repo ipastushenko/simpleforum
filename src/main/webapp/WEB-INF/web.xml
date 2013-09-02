@@ -9,6 +9,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/SimpleForum-servlet.xml
+            /WEB-INF/application-context*.xml
             classpath:application-context*.xml
         </param-value>
     </context-param>
@@ -19,14 +20,6 @@
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-
-    <listener>
-        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-    </listener>
-
-    <listener>
-        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
 
     <servlet>
@@ -42,4 +35,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

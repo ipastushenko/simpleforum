@@ -12,12 +12,21 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 
-
 @Entity
 @Table(name="title")
+@NamedQueries({
+        @NamedQuery(
+                name="findAllTitle",
+                query="select t from TitleEntity t"
+        )
+})
 public class TitleEntity extends Title {
     public TitleEntity() {
         super();
+    }
+
+    public TitleEntity(String name) {
+        super(name);
     }
 
     @Id
