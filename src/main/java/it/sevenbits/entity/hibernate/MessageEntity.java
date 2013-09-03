@@ -4,6 +4,7 @@ import it.sevenbits.entity.Message;
 import it.sevenbits.entity.Title;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,17 +22,18 @@ import javax.persistence.*;
         )
 })
 @Table(name="message")
-public class MessageEntity extends Message {
+public class MessageEntity extends Message implements Serializable {
     public MessageEntity() {
         super();
     }
 
-    public MessageEntity(final TitleEntity title, final String textMessage) {
-        super(title, textMessage);
+    public MessageEntity(final TitleEntity titleEntity, final String textMessage) {
+        super(titleEntity, textMessage);
+        this.titleEntity = titleEntity;
     }
 
-    @ManyToOne
-    @JoinColumn(name="titleId")
+    @ManyToOne( cascade = {CascadeType.MERGE, CascadeType.PERSIST} )
+    @JoinColumn(name="titleId", nullable = false)
     public TitleEntity getTitleEntity() {
         return titleEntity;
     }
@@ -60,4 +62,5 @@ public class MessageEntity extends Message {
 
     private Long id;
     private TitleEntity titleEntity;
+    private static final long serialVersionUID = 4385234262720442213L;
 }

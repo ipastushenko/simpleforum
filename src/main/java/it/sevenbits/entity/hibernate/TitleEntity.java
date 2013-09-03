@@ -3,6 +3,7 @@ package it.sevenbits.entity.hibernate;
 import it.sevenbits.entity.Title;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +21,7 @@ import javax.persistence.*;
                 query="select t from TitleEntity t"
         )
 })
-public class TitleEntity extends Title {
+public class TitleEntity extends Title implements Serializable{
     public TitleEntity() {
         super();
     }
@@ -46,5 +47,6 @@ public class TitleEntity extends Title {
         this.id = id;
     }
 
+    private static final long serialVersionUID = 2194724481956723413L;
     private Long id;
 }

@@ -14,13 +14,13 @@ import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.Validator;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -32,72 +32,75 @@ import it.sevenbits.dao.MessageDao;
 
 @Controller
 public class MessagesController {
-    @RequestMapping(value = "/messages.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/messages/{titleId}/{page}", method = RequestMethod.GET)
     public ModelAndView viewMessages(
-            @RequestParam(value = "titleId", required = true) final Long titleId,
-            @RequestParam(value = "page", required = true) final Long page
-    )
-    {
-        //TODO:check parameters for null
-
-        ModelAndView modelAndView = new ModelAndView("messages");
-        append(modelAndView, page, titleId);
-
+        @PathVariable final Long titleId,
+        @PathVariable final Long page
+    ) {
+        ModelAndView modelAndView = append(page, titleId);
         return  modelAndView;
     }
 
-    //TODO:check parameters for null
-    @RequestMapping(value = "/messages.html", method = RequestMethod.POST)
+    @RequestMapping(value = "/messages", method = RequestMethod.POST)
     public ModelAndView viewMessages(
-        @Valid @ModelAttribute("sendMessageForm") final SendMessageForm sendMessageForm,
+        @Valid final SendMessageForm sendMessageForm,
         final BindingResult result
     ) {
-        ModelAndView modelAndView = new ModelAndView("messages");
         Long page = sendMessageForm.getPage();
         Long titleId = sendMessageForm.getTitleId();
-        append(modelAndView, page, titleId);
-        Message message = new Message(titleDao.getTitleById(titleId), "asdasd");
-        messageDao.create(message, titleId);
-        /*if(!result.hasErrors())
-        {
-            Long page = sendMessageForm.getPage();
-            Long titleId = sendMessageForm.getTitleId();
-
-
+        if (!result.hasErrors()) {
+            Message message = new Message(titleDao.getTitleById(titleId), sendMessageForm.getTextMessage());
+            messageDao.create(message, titleId);
         }
-        else
-        {
-            modelAndView = new ModelAndView("messages");
-            modelAndView.addObject()
-        }*/
+        else {
+            //TODO:get error message for user
+        }
+
+        ModelAndView modelAndView = append(page, titleId);
 
         return modelAndView;
     }
 
-    private void append (ModelAndView modelAndViewMessages, final Long page, final Long titleId) {
-        List<Message> list = messageDao.getAll(titleId);
-        List<Message> listMessage = new ArrayList<>();
-        int countRow = ControllerUtils.getCountRow(getClass());
-        for (int i = page.intValue() * countRow; i < list.size() && i < (page.intValue() + 1) * countRow; ++i) {
-            listMessage.add(list.get(i));
+    private ModelAndView append (final Long page, final Long titleId) {
+        ModelAndView modelAndView = null;
+        if (page == null || titleId == null) {
+            modelAndView = new ModelAndView("redirect:/titles/0");
+        }
+        else {
+            modelAndView = new ModelAndView("messages");
+            List<Message> list = messageDao.getAll(titleId);
+            List<Message> listMessage = new ArrayList<>();
+            int countRow = ControllerUtils.getCountRow(getClass());
+            for (int i = (page.intValue() - 1) * countRow; i < list.size() && i < page.intValue() * countRow; ++i) {
+                listMessage.add(list.get(i));
+            }
+
+            int pagePrev = page.intValue() - 1;
+            int pageNext = page.intValue() + 1;
+            if (pagePrev < 0)
+                pagePrev = 0;
+            if (page.intValue() * countRow >= list.size())
+                pageNext = 1;
+            modelAndView.addObject("pagePrev", pagePrev);
+            modelAndView.addObject("pageNext", pageNext);
+            modelAndView.addObject("messages", listMessage);
+            modelAndView.addObject("titleId", titleId);
+            modelAndView.addObject("title", titleDao.getTitleById(titleId).getName());
+            modelAndView.addObject("page", page);
         }
 
-        int pagePrev = page.intValue() - 1;
-        int pageNext = page.intValue() + 1;
-        if (pagePrev < -1)
-            pagePrev = -1;
-        if ((page.intValue() + 1) * countRow >= list.size())
-            pageNext = 0;
-        modelAndViewMessages.addObject("pagePrev", pagePrev);
-        modelAndViewMessages.addObject("pageNext", pageNext);
-        modelAndViewMessages.addObject("messages", listMessage);
-        modelAndViewMessages.addObject("titleId", titleId);
-        modelAndViewMessages.addObject("title", titleDao.getTitleById(titleId).getName());
-        modelAndViewMessages.addObject("page", page);
+        return modelAndView;
+    }
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(validator);
     }
 
     @Resource(name="messageDao")
     private MessageDao messageDao;
     @Resource(name="titleDao")
     private TitleDao titleDao;
+    @Autowired
+    private Validator validator;
 }

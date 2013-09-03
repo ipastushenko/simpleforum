@@ -15,4 +15,5 @@ import java.util.List;
 public interface MessageDao {
     void create(final Message message, final Long titleId);
     List<Message> getAll(final Long titleId);
+    void delete(final Message message, final Long titleId);
 }

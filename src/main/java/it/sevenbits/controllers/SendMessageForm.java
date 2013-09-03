@@ -1,5 +1,9 @@
 package it.sevenbits.controllers;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
+
 /**
  * Created with IntelliJ IDEA.
  * User: sevenbits
@@ -25,16 +29,19 @@ public class SendMessageForm {
         return titleId;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setTextMessage(String textMessage) {
+        this.textMessage = textMessage;
     }
 
-    public String getMessage() {
-        return message;
+    public String getTextMessage() {
+        return textMessage;
     }
 
-
+    @NotNull
     private Long page;
+    @NotNull
     private Long titleId;
-    private String message;
+    @NotNull
+    @NotEmpty(message = "Password must not be blank.")
+    private String textMessage;
 }

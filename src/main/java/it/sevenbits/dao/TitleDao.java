@@ -17,4 +17,5 @@ public interface TitleDao {
     void create(final Title title);
     List<TitleEntity> getAll();
     TitleEntity getTitleById(final Long id);
+    void delete (TitleEntity title);
 }

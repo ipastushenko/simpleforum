@@ -3,6 +3,7 @@ package it.sevenbits.controllers;
 import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,30 +25,58 @@ import it.sevenbits.entity.Title;
 
 @Controller
 public class TitlesController {
+    @RequestMapping(value = "/titles/{page}", method = RequestMethod.GET)
+    public ModelAndView viewTitles(@PathVariable final Long page) {
+        Long currentPage = page;
+        if (currentPage == null) {
+            currentPage = new Long(1);
+        }
+        ModelAndView modelAndView = createModelTitles(currentPage);
 
-    @RequestMapping(value = "/titles.html", method = RequestMethod.GET)
-    public ModelAndView viewMessages(@RequestParam(value = "page", required = true) final Long page) {
+        return  modelAndView;
+    }
+
+    @RequestMapping(value = "/removeTitle/{titleId}/{page}", method = RequestMethod.GET)
+    public ModelAndView deleteTitles(
+        @PathVariable final Long titleId,
+        @PathVariable final Long page
+    ) {
+
+        Long currentPage = page;
+        if (currentPage == null)
+            currentPage = new Long(1);
+        if (titleId != null) {
+            TitleEntity title = titleDao.getTitleById(titleId);
+            titleDao.delete(title);
+        }
+        ModelAndView modelAndView = createModelTitles(currentPage);
+
+        return  modelAndView;
+    }
+
+    private ModelAndView createModelTitles(Long currentPage)
+    {
         ModelAndView modelAndView = new ModelAndView("titles");
-        //TODO:check parameters for null
-        List<TitleEntity> list = titleDao.getAll();
 
+        List<TitleEntity> list = titleDao.getAll();
         List<TitleEntity> listTitle = new ArrayList<>();
         int countRow = ControllerUtils.getCountRow(getClass());
-        for (int i = page.intValue() * countRow; i < list.size() && i < (page.intValue() + 1) * countRow; ++i) {
+        for (int i = (currentPage.intValue() - 1) * countRow; i < list.size() && i < currentPage.intValue() * countRow; ++i) {
             listTitle.add(list.get(i));
         }
 
-        int pagePrev = page.intValue() - 1;
-        int pageNext = page.intValue() + 1;
-        if (pagePrev < -1)
-            pagePrev = -1;
-        if ((page.intValue() + 1) * countRow >= list.size())
-            pageNext = 0;
+        int pagePrev = currentPage.intValue() - 1;
+        int pageNext = currentPage.intValue() + 1;
+        if (pagePrev < 0)
+            pagePrev = 0;
+        if (currentPage.intValue() * countRow >= list.size())
+            pageNext = 1;
         modelAndView.addObject("pagePrev", pagePrev);
         modelAndView.addObject("pageNext", pageNext);
         modelAndView.addObject("titles", listTitle);
+        modelAndView.addObject("page", currentPage);
 
-        return  modelAndView;
+        return modelAndView;
     }
 
     @Resource(name="titleDao")
