@@ -7,22 +7,24 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created with IntelliJ IDEA.
- * User: sevenbits
- * Date: 8/30/13
- * Time: 2:20 PM
- * To change this template use File | Settings | File Templates.
+ * Message entity
+ * @author Ivan Pastushenko @ sevenbits
+ * @version 30.08.2013
+ * @version 30.08.2013
  */
-
 @Entity
 @NamedQueries({
         @NamedQuery(
-                name="findAllMessagesOfTitle",
-                query="select m from MessageEntity m where m.titleEntity.id = :titleId"
+            name="findAllMessagesOfTitle",
+            query="select m from MessageEntity m where m.titleEntity.id = :titleId"
         )
 })
 @Table(name="message")
 public class MessageEntity extends Message implements Serializable {
+    private static final long serialVersionUID = 4385234262720442213L;
+    private Long id;
+    private TitleEntity titleEntity;
+
     public MessageEntity() {
         super();
     }
@@ -59,8 +61,4 @@ public class MessageEntity extends Message implements Serializable {
         this.titleEntity = titleEntity;
         super.setTitle(titleEntity);
     }
-
-    private Long id;
-    private TitleEntity titleEntity;
-    private static final long serialVersionUID = 4385234262720442213L;
 }

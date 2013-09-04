@@ -1,13 +1,14 @@
 package it.sevenbits.entity;
 
 /**
- * Created with IntelliJ IDEA.
- * User: sevenbits
- * Date: 8/30/13
- * Time: 1:34 PM
- * To change this template use File | Settings | File Templates.
+ * Message
+ * @author Ivan Pastushenko @ sevenbits
+ * @version 1.0.0 30.08.2013
  */
 public class Message {
+    private Title title;
+    private String textMessage;
+
     public Message() {
     }
 
@@ -31,7 +32,4 @@ public class Message {
     public void setTitle(final Title title) {
         this.title = title;
     }
-
-    private Title title;
-    private String textMessage;
 }

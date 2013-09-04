@@ -1,13 +1,13 @@
 package it.sevenbits.entity;
 
 /**
- * Created with IntelliJ IDEA.
- * User: sevenbits
- * Date: 8/30/13
- * Time: 1:34 PM
- * To change this template use File | Settings | File Templates.
+ * Title
+ * @author Ivan Pastushenko @sevenbits
+ * @version 30.08.2013
  */
 public class Title {
+    private String name;
+
     public Title() {
     }
 
@@ -40,6 +40,4 @@ public class Title {
     public int hashCode() {
         return 31*name.hashCode();
     }
-
-    private String name;
 }

@@ -3,14 +3,16 @@
 <html>
 <head>
     <title>Simple forum</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>" />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/main.css"/>' />
+    <script type="text/javascript" src='<c:url value="/resources/js/libs/jquery-1.10.2.min.js"/>'  language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/js/formValidate.js"/>'  language="javascript"> </script>
 </head>
 <body>
-    <div class="center">
+    <div>
         <table>
             <thead>
                 <tr>
-                    <th class="titles">
+                    <th>
                         Titles
                     </th>
                 </tr>
@@ -20,10 +22,10 @@
                     <th>
                         <c:forEach items="${titles}" var="title" varStatus="status">
                             <tr>
-                                <td class="title">
+                                <td>
                                     <a href='<c:url value="/messages/${title.id}/1"/>'><c:out value="${title.name}" /></a>
                                 </td>
-                                <td class="buttonDelete">
+                                <td>
                                     <a href='<c:url value="/removeTitle/${title.id}/${page}"/>'>Delete</a>
                                 </td>
                             </tr>
@@ -45,6 +47,20 @@
                             </tr>
                         </th>
                     </c:if>
+                </tr>
+                <tr>
+                    <th>
+                        <tr>
+                            <td>
+                                <spring:url var = "action" value='/titles' />
+                                <form method="post" action="${action}">
+                                    <input type="hidden" name="page" value="<c:out value="${page}" />"/>
+                                    <input type="text" name="name" maxlength="256" />
+                                    <input type="submit" value="Add new titler" />
+                                </form>
+                            </td>
+                        </tr>
+                    </th>
                 </tr>
             </tbody>
         </table>

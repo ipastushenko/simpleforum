@@ -3,16 +3,17 @@
 <html>
 <head>
     <title>Simple forum</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>" />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/main.css"/>' />
+    <script type="text/javascript" src='<c:url value="/resources/js/formValidate.js"/>'  language="javascript"> </script>
 </head>
 <body>
-    <div class="center">
+    <div>
         <a href='<c:url value="/titles/1"/>'>Go to titles</a>
         Title: <c:out value="${title}" />
         <table>
             <thead>
                 <tr>
-                    <th class="messages">
+                    <th>
                         Messages
                     </th>
                 </tr>
@@ -24,6 +25,9 @@
                             <tr>
                                 <td class="message">
                                     <c:out value="${message.textMessage}" />
+                                </td>
+                                <td class="buttonDelete">
+                                    <a href='<c:url value="/removeMessage/${message.id}/${page}"/>'>Delete</a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -50,12 +54,12 @@
                         <tr>
                             <td>
                                 <spring:url var = "action" value='/messages' />
-                                <form:form method="post" action="${action}">
+                                <form method="post" action="${action}">
                                     <input type="hidden" name="titleId" value="<c:out value="${titleId}" />"/>
                                     <input type="hidden" name="page" value="<c:out value="${page}" />"/>
                                     <input type="text" name="textMessage" maxlength="256" />
                                     <input type="submit" value="Send message" />
-                                </form:form>
+                                </form>
                             </td>
                         </tr>
                     </th>

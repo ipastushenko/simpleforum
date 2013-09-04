@@ -6,13 +6,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created with IntelliJ IDEA.
- * User: sevenbits
- * Date: 8/30/13
- * Time: 1:56 PM
- * To change this template use File | Settings | File Templates.
+ * Title entity
+ * @author Ivan Pastushenko @ sevenbits
+ * @version 30.08.2013
  */
-
 @Entity
 @Table(name="title")
 @NamedQueries({
@@ -22,6 +19,9 @@ import java.io.Serializable;
         )
 })
 public class TitleEntity extends Title implements Serializable{
+    private static final long serialVersionUID = 2194724481956723413L;
+    private Long id;
+
     public TitleEntity() {
         super();
     }
@@ -46,7 +46,4 @@ public class TitleEntity extends Title implements Serializable{
     public void setId(final Long id) {
         this.id = id;
     }
-
-    private static final long serialVersionUID = 2194724481956723413L;
-    private Long id;
 }
