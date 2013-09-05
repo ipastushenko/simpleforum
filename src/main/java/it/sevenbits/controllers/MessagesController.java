@@ -1,6 +1,6 @@
 package it.sevenbits.controllers;
 
-import it.sevenbits.dao.TitleDao;
+import it.sevenbits.tests.TitleDao;
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.forms.SendMessageForm;
@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 
-import it.sevenbits.dao.MessageDao;
+import it.sevenbits.tests.MessageDao;
 
 /**
  * MessagesController
@@ -48,7 +48,7 @@ public class MessagesController {
         Long page = sendMessageForm.getPage();
         Long titleId = sendMessageForm.getTitleId();
         if (!result.hasErrors()) {
-            Message message = new Message(titleDao.getTitleById(titleId), sendMessageForm.getTextMessage());
+            Message message = new Message(titleDao.findById(titleId), sendMessageForm.getTextMessage());
             messageDao.create(message, titleId);
         }
         else {
@@ -67,7 +67,7 @@ public class MessagesController {
     ) {
         Long titleId = new Long(0);
         if (messageId != null) {
-            MessageEntity messageEntity = messageDao.getMessageById(messageId);
+            MessageEntity messageEntity = messageDao.findById(messageId);
             if (messageEntity != null) {
                 titleId = messageEntity.getTitleEntity().getId();
                 messageDao.delete(messageEntity);
@@ -91,14 +91,14 @@ public class MessagesController {
         else {
             Long currentPage = ControllerUtils.getCurrentPage(page);
             modelAndView = new ModelAndView("messages");
-            List<MessageEntity> list = messageDao.getByTitleId(titleId);
+            List<MessageEntity> list = messageDao.findByTitleId(titleId);
             int countRow = ControllerUtils.getCountRow(getClass());
 
             modelAndView.addObject("pagePrev", ControllerUtils.getPagePrev(currentPage.intValue()));
             modelAndView.addObject("pageNext", ControllerUtils.getPageNext(currentPage.intValue(), countRow, list.size()));
             modelAndView.addObject("messages", ControllerUtils.<MessageEntity>getListEntity(list, countRow, currentPage.intValue()));
             modelAndView.addObject("titleId", titleId);
-            modelAndView.addObject("title", titleDao.getTitleById(titleId).getName());
+            modelAndView.addObject("title", titleDao.findById(titleId).getName());
             modelAndView.addObject("page", currentPage);
         }
 

@@ -1,6 +1,6 @@
 package it.sevenbits.controllers;
 
-import it.sevenbits.dao.TitleDao;
+import it.sevenbits.tests.TitleDao;
 import it.sevenbits.entity.Title;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.AddTitleForm;
@@ -40,7 +40,7 @@ public class TitlesController {
     @RequestMapping(value = "/removeTitle/{titleId}/{page}", method = RequestMethod.GET)
     public ModelAndView deleteTitle(@PathVariable final Long titleId, @PathVariable final Long page) {
         if (titleId != null) {
-            TitleEntity title = titleDao.getTitleById(titleId);
+            TitleEntity title = titleDao.findById(titleId);
             if (title != null)
                 titleDao.delete(title);
         }
@@ -77,7 +77,7 @@ public class TitlesController {
     {
         Long currentPage = ControllerUtils.getCurrentPage(page);
         ModelAndView modelAndView = new ModelAndView("titles");
-        List<TitleEntity> list = titleDao.getAll();
+        List<TitleEntity> list = titleDao.findAll();
         int countRow = ControllerUtils.getCountRow(getClass());
 
         modelAndView.addObject("pagePrev", ControllerUtils.getPagePrev(currentPage.intValue()));
