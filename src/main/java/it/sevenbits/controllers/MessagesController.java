@@ -4,10 +4,12 @@ import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.forms.SendMessageForm;
+import it.sevenbits.jsonmodels.ListMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
+import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,6 +32,14 @@ public class MessagesController {
     private TitleDao titleDao;
     @Autowired
     private Validator validator;
+
+ /*   @RequestMapping(value = "/json", produces = "application/json", method = RequestMethod.GET)
+    public @ResponseBody ListMessages getListMessages() {
+        ListMessages listMessages = new ListMessages();
+        listMessages.setText("asdasd");
+        listMessages.setStaffText(new String[]{"qwdqwd", "qweqwdqwd"});
+        return listMessages;
+    }                      */
 
     @RequestMapping(value = "/messages/{titleId}/{page}", method = RequestMethod.GET)
     public ModelAndView viewMessages(

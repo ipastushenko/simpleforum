@@ -14,8 +14,8 @@
     <file path="/web.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378350584108" ignored="false" />
     <file path="/index.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378098943851" ignored="false" />
     <file path="/hibernate.properties" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378090659345" ignored="false" />
-    <file path="/SimpleForum-servlet.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378090999819" ignored="false" />
-    <file path="/MessagesController.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378368013801" ignored="false" />
+    <file path="/SimpleForum-servlet.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378373646218" ignored="false" />
+    <file path="/MessagesController.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378377180698" ignored="false" />
     <file path="/TitleDao.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378364621080" ignored="false" />
     <file path="$PROJECT_DIR$/../../n-exchange/n-exchange/src/main/resources/local/application-context-dao.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378092321850" ignored="false" />
     <file path="/application-context-dao.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378110182671" ignored="false" />
@@ -24,8 +24,8 @@
     <file path="/Message.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378283582026" ignored="false" />
     <file path="/MessageEntity.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378283690501" ignored="false" />
     <file path="/TitleEntity.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378283652402" ignored="false" />
-    <file path="/pom.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378369465325" ignored="false" />
-    <file path="/titles.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378281638403" ignored="false" />
+    <file path="/pom.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378376375870" ignored="false" />
+    <file path="/titles.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378374803976" ignored="false" />
     <file path="/ControllerUtils.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378268605997" ignored="false" />
     <file path="/MessageDao.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378365004351" ignored="false" />
     <file path="/MessageDaoHibernate.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378365945370" ignored="false" />
@@ -42,6 +42,7 @@
     <file path="$USER_HOME$/.m2/settings.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378348876797" ignored="false" />
     <file path="/application-context.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378349193050" ignored="false" />
     <file path="/application-context-test.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378358989584" ignored="false" />
+    <file path="/ListMessages.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378377522554" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +104,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DaoTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MessagesController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="29" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.7322695">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4091#4106#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DaoTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/it/sevenbits/dao/DaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="671" selection-end="671" vertical-scroll-proportion="0.33333334">
+            <state line="20" column="13" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,40 +127,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Title.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/Title.java">
+      <file leaf-file-name="ListMessages.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/ListMessages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+            <state line="11" column="20" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Message.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/Message.java">
+      <file leaf-file-name="TitlesController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/TitlesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TitleEntity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/TitleEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+            <state line="26" column="13" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="27" selection-start="5515" selection-end="5515" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -155,19 +150,26 @@
       <file leaf-file-name="SimpleForum-servlet.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/SimpleForum-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="12" column="39" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageEntity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="72" column="21" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="titles.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/titles.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="6" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,9 +211,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/it/sevenbits/dao/DaoTests.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/local/application-context.xml" />
-        <option value="$PROJECT_DIR$/src/test/resources/tests/application-context-test.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/local/application-test.xml" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/TitleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/TitlesController.java" />
@@ -219,12 +218,15 @@
         <option value="$PROJECT_DIR$/src/test/java/it/sevenbits/tests/DaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/tests/hibernate/MessageDaoHibernate.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/local/application-context-dao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/it/sevenbits/dao/DaoTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/ListMessages.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/SimpleForum-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/titles.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java" />
       </list>
     </option>
   </component>
@@ -431,6 +433,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -487,7 +519,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="forms" />
+              <option name="myItemId" value="jsonmodels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,108 +546,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sevenbits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleForum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simpleforum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sevenbits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hibernate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleForum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simpleforum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sevenbits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleForum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simpleforum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sevenbits" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hibernate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1013,6 +943,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/TitleDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="17" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
@@ -1024,7 +963,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/MessageDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+        <state line="13" column="17" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1040,44 +979,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="50" selection-start="2009" selection-end="2009" vertical-scroll-proportion="0.0">
+        <state line="22" column="13" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/forms/AddTitleForm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/TitlesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/forms/SendMessageForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/Title.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/TitleEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+        <state line="26" column="13" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1098,20 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/SimpleForum-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="27" selection-start="5515" selection-end="5515" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1119,20 +1016,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.4.RELEASE/spring-webmvc-3.2.4.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0">
+        <state line="10" column="13" selection-start="234" selection-end="234" vertical-scroll-proportion="0.256654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="21" selection-start="2500" selection-end="2500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/it/sevenbits/dao/DaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/it/sevenbits/dao/DaoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/ListMessages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="671" selection-end="671" vertical-scroll-proportion="0.33333334">
+        <state line="11" column="20" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/SimpleForum-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="39" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/titles.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="29" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.7322695">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4091#4106#0" expanded="true" />
           </folding>
         </state>
       </provider>
