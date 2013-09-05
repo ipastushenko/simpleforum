@@ -1,6 +1,6 @@
 package it.sevenbits.controllers;
 
-import it.sevenbits.tests.TitleDao;
+import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Title;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.AddTitleForm;

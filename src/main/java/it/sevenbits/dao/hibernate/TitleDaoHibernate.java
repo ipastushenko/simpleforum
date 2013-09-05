@@ -5,6 +5,7 @@ import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import it.sevenbits.entity.Title;
@@ -29,12 +30,20 @@ public class TitleDaoHibernate implements TitleDao {
 
     @Transactional(readOnly = false)
     public void create(final Title title) {
+        if (title == null) {
+            throw new NullPointerException();
+        }
+
         TitleEntity titleEntity = new TitleEntity(title.getName());
         hibernateTemplate.saveOrUpdate(titleEntity);
     }
 
     @Transactional(readOnly = false)
     public void delete (final TitleEntity titleEntity) {
+        if (titleEntity == null) {
+            throw new NullPointerException();
+        }
+
         List<MessageEntity> listMessages = hibernateTemplate.findByNamedQueryAndNamedParam(
                 "findAllMessagesOfTitle","titleId", titleEntity.getId()
         );
@@ -42,11 +51,15 @@ public class TitleDaoHibernate implements TitleDao {
         hibernateTemplate.delete(titleEntity);
     }
 
-    public List<TitleEntity> getAll() {
+    public List<TitleEntity> findAll() {
         return hibernateTemplate.findByNamedQuery("findAllTitle");
     }
 
-    public TitleEntity getTitleById(final Long id) {
+    public TitleEntity findById(final Long id) {
+        if (id == null) {
+            throw new NullPointerException();
+        }
+
         return hibernateTemplate.get(TitleEntity.class, id);
     }
 }

@@ -6,6 +6,7 @@ import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,23 +30,37 @@ public class MessageDaoHibernate implements MessageDao {
 
     @Transactional(readOnly = false)
     public void create(final Message message, final Long titleId) {
-        TitleEntity titleEntity = hibernateTemplate.get(TitleEntity.class, titleId);
-        if (titleEntity != null) {
-            MessageEntity messageEntity = new MessageEntity(titleEntity, message.getTextMessage());
-            hibernateTemplate.saveOrUpdate(messageEntity);
+        if (message == null || titleId == null) {
+            throw new NullPointerException();
         }
+
+        TitleEntity titleEntity = hibernateTemplate.get(TitleEntity.class, titleId);
+        MessageEntity messageEntity = new MessageEntity(titleEntity, message.getTextMessage());
+        hibernateTemplate.saveOrUpdate(messageEntity);
     }
 
     @Transactional(readOnly = false)
     public void delete(final MessageEntity messageEntity) {
+        if (messageEntity == null) {
+            throw new NullPointerException();
+        }
+
         hibernateTemplate.delete(messageEntity);
     }
 
-    public List<MessageEntity> getByTitleId(final Long titleId) {
+    public List<MessageEntity> findByTitleId(final Long titleId) {
+        if (titleId == null) {
+            throw new NullPointerException();
+        }
+
         return hibernateTemplate.findByNamedQueryAndNamedParam("findAllMessagesOfTitle","titleId", titleId);
     }
 
-    public MessageEntity getMessageById(final Long id) {
+    public MessageEntity findById(final Long id) {
+        if (id == null) {
+            throw new NullPointerException();
+        }
+
         return hibernateTemplate.get(MessageEntity.class, id);
     }
 }

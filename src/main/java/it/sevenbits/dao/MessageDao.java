@@ -2,6 +2,8 @@ package it.sevenbits.dao;
 
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
+import org.springframework.dao.DataAccessException;
+
 import java.util.List;
 
 /**
@@ -14,26 +16,32 @@ public interface MessageDao {
      * add message with titleId
      * @param message message
      * @param titleId id of title
+     * @throws NullPointerException if message is null or titleId is null
+     * @throws DataAccessException if title with titleId no in database
      */
-    void create(final Message message, final Long titleId);
+    void create(final Message message, final Long titleId) throws DataAccessException, NullPointerException;
 
     /**
      * delete message
-     * @param message message
+     * @param messageEntity message
+     * @throws NullPointerException if message is null
+     * @throws DataAccessException if no messageEntity in database
      */
-    void delete(final MessageEntity message);
+    void delete(final MessageEntity messageEntity) throws DataAccessException, NullPointerException;
 
     /**
      * get all message with titleId
      * @param titleId id of title
      * @return list messages
+     * @throws NullPointerException if titleId is null
      */
-    List<MessageEntity> getByTitleId(final Long titleId);
+    List<MessageEntity> findByTitleId(final Long titleId) throws NullPointerException;
 
     /**
      * get message by id
      * @param id id of message
      * @return message
+     * @throws NullPointerException if id is null
      */
-    MessageEntity getMessageById(final Long id);
+    MessageEntity findById(final Long id) throws NullPointerException;
 }

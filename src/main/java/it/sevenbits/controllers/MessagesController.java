@@ -1,6 +1,6 @@
 package it.sevenbits.controllers;
 
-import it.sevenbits.tests.TitleDao;
+import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.forms.SendMessageForm;
@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 
-import it.sevenbits.tests.MessageDao;
+import it.sevenbits.dao.MessageDao;
 
 /**
  * MessagesController
