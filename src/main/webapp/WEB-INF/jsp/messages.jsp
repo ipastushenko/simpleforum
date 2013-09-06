@@ -53,7 +53,7 @@
                     <th>
                         <tr>
                             <td>
-                                <spring:url var = "action" value='/messages' />
+                                <spring:url var = "action" value='/json/messages' />
                                 <form method="post" action="${action}">
                                     <input type="hidden" name="titleId" value="<c:out value="${titleId}" />"/>
                                     <input type="hidden" name="page" value="<c:out value="${page}" />"/>

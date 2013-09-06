@@ -10,10 +10,6 @@ import javax.validation.constraints.NotNull;
  */
 
 public class SendMessageForm {
-    /**Current page*/
-    @NotNull
-    private Long page;
-
     /**Current title id*/
     @NotNull
     private Long titleId;
@@ -23,10 +19,6 @@ public class SendMessageForm {
     @NotEmpty
     private String textMessage;
 
-    public Long getPage() {
-        return page;
-    }
-
     public Long getTitleId() {
         return titleId;
     }
@@ -35,15 +27,11 @@ public class SendMessageForm {
         return textMessage;
     }
 
-    public void setPage(Long page) {
-        this.page = page;
-    }
-
-    public void setTitleId(Long titleId) {
+    public void setTitleId(final Long titleId) {
         this.titleId = titleId;
     }
 
-    public void setTextMessage(String textMessage) {
+    public void setTextMessage(final String textMessage) {
         this.textMessage = textMessage;
     }
 }

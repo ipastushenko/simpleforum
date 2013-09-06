@@ -16,18 +16,16 @@ public interface TitleDao {
     /**
      * add title
      * @param title title
-     * @throws NullPointerException if title is null
      * @throws DataAccessException if exception in database
      */
-    void create(final Title title) throws DataAccessException, NullPointerException;
+    void create(final Title title) throws DataAccessException;
 
     /**
      * delete title
      * @param titleEntity title
-     * @throws NullPointerException if titleEntity is null
      * @throws DataAccessException if no titleEntity in database
      */
-    void delete(final TitleEntity titleEntity) throws DataAccessException, NullPointerException;
+    void delete(final TitleEntity titleEntity) throws DataAccessException;
 
     /**
      * get all titles
@@ -39,7 +37,6 @@ public interface TitleDao {
      * get title by id
      * @param id id of title
      * @return title
-     * @throws NullPointerException if id is null
      */
-    TitleEntity findById(final Long id) throws NullPointerException;
+    TitleEntity findById(final Long id);
 }

@@ -4,6 +4,7 @@ import it.sevenbits.dao.MessageDao;
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -29,10 +30,7 @@ public class MessageDaoHibernate implements MessageDao {
     }
 
     @Transactional(readOnly = false)
-    public void create(final Message message, final Long titleId) {
-        if (message == null || titleId == null) {
-            throw new NullPointerException();
-        }
+    public void create(final Message message, final Long titleId)  throws DataAccessException {
 
         TitleEntity titleEntity = hibernateTemplate.get(TitleEntity.class, titleId);
         MessageEntity messageEntity = new MessageEntity(titleEntity, message.getTextMessage());
@@ -40,27 +38,15 @@ public class MessageDaoHibernate implements MessageDao {
     }
 
     @Transactional(readOnly = false)
-    public void delete(final MessageEntity messageEntity) {
-        if (messageEntity == null) {
-            throw new NullPointerException();
-        }
-
+    public void delete(final MessageEntity messageEntity) throws DataAccessException {
         hibernateTemplate.delete(messageEntity);
     }
 
-    public List<MessageEntity> findByTitleId(final Long titleId) {
-        if (titleId == null) {
-            throw new NullPointerException();
-        }
-
-        return hibernateTemplate.findByNamedQueryAndNamedParam("findAllMessagesOfTitle","titleId", titleId);
+    public List<MessageEntity> findByTitleId(final Long titleId) throws DataAccessException {
+        return hibernateTemplate.findByNamedQueryAndNamedParam("findAllMessagesOfTitle", "titleId", titleId);
     }
 
-    public MessageEntity findById(final Long id) {
-        if (id == null) {
-            throw new NullPointerException();
-        }
-
+    public MessageEntity findById(final Long id) throws DataAccessException {
         return hibernateTemplate.get(MessageEntity.class, id);
     }
 }

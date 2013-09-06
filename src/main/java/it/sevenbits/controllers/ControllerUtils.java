@@ -15,6 +15,22 @@ final class ControllerUtils {
     /**default count rows of table*/
     public static final int DEFAULT_COUNT_ROWS_TABLE = 10;
 
+    public static int getCurrentPage(Long page, int countPages) {
+        int currentPage = page.intValue();
+        if (currentPage > countPages)
+            currentPage = countPages;
+
+        return currentPage;
+    }
+
+    public static int getCountPages(int listSize, int countRows) {
+        int countPages = listSize / countRows;
+        if (listSize % countRows != 0 || listSize == 0)
+            countPages += 1;
+
+        return countPages;
+    }
+
     public static Long getCurrentPage(Long page) {
         if (page == null)
             return new Long(1);

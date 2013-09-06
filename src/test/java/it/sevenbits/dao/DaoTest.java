@@ -4,12 +4,17 @@ import static org.junit.Assert.*;
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.Title;
 import it.sevenbits.entity.hibernate.MessageEntity;
+import it.sevenbits.entity.hibernate.TitleEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.dao.DataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Tests DAO hibernate
@@ -18,48 +23,56 @@ import javax.annotation.Resource;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:application-test.xml"})
+@TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
 public class DaoTest {
     @Resource(name="messageDao")
     private MessageDao messageDao;
     @Resource(name="titleDao")
     private TitleDao titleDao;
 
-    @Test
+    @Test(expected = DataAccessException.class)
+    @Transactional
     public void deleteMessages() {
         MessageEntity messageEntity = messageDao.findById(new Long(1));
+        TitleEntity titleEntity = titleDao.findById(new Long(1));
+        titleDao.delete(titleEntity);
+        titleDao.delete(titleEntity);
         messageDao.delete(messageEntity);
-        try {
-            messageDao.delete(messageEntity);
-            assertTrue(false);
-        }
-        catch (DataAccessException e)
-        {
-            assertTrue(true);
-        }
+        messageDao.delete(messageEntity);
+        messageDao.delete(messageEntity);
     }
 
-    @Test
+    @Test(expected = DataAccessException.class)
+    @Transactional
     public void addMessages() {
-        try {
-            titleDao.delete(titleDao.findById(new Long(1)));
-            messageDao.create(new Message(new Title("Title"), "Message"), new Long(1));
-            assertTrue(false);
-        }
-        catch (DataAccessException e)
-        {
-            assertTrue(true);
-        }
+        titleDao.delete(titleDao.findById(new Long(1)));
+        messageDao.create(new Message(new Title("Title"), "Message"), new Long(1));
+        //messageDao.create(new Message(new Title("Title"), "Message"), new Long(1));
     }
 
     @Test
+    @Transactional
     public void findTitleById() {
-        try {
-            assertNull(titleDao.findById(new Long(100)));
-            assertTrue(true);
-        }
-        catch (DataAccessException e)
+        assertNull(titleDao.findById(new Long(100)));
+        for (Long i = new Long(1); i <= 12; ++i)
         {
-            assertTrue(false);
+            TitleEntity titleEntity = titleDao.findById(i);
+            assertNotNull(titleEntity);
+            titleDao.delete(titleEntity);
+            List<MessageEntity> messageEntityList = messageDao.findByTitleId(i);
+            assertEquals(messageEntityList.size(), 0);
         }
+        List<TitleEntity> listTitleEntities = titleDao.findAll();
+        assertNull(titleDao.findById(new Long(1)));
+        assertEquals(listTitleEntities.size(), 0);
+        /*TitleEntity titleEntity = titleDao.findById(new Long(1));
+        assertNotNull(titleEntity);
+        titleDao.delete(titleEntity);
+        //messageDao.create(new Message(new Title("Title"), "Message"), new Long(1));
+        titleEntity = titleDao.findById(new Long(2));
+
+        //titleDao.findById(new Long(1)));
+        //List<MessageEntity> listMessageEntities = messageDao.findByTitleId(new Long(1));
+        //*/
     }
 }
