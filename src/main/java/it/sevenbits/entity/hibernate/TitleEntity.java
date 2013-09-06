@@ -10,6 +10,7 @@ import java.io.Serializable;
  * @author Ivan Pastushenko @ sevenbits
  * @version 30.08.2013
  */
+//limit :limit offset :offset
 @Entity
 @Table(name="title")
 @NamedQueries({

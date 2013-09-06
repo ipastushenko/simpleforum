@@ -1,11 +1,9 @@
 package it.sevenbits.dao.hibernate;
 
+import it.sevenbits.dao.DAOException;
 import it.sevenbits.dao.TitleDao;
-import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -31,18 +29,28 @@ public class TitleDaoHibernate implements TitleDao {
     }
 
     @Transactional(readOnly = false)
-    public void create(final Title title) throws DataAccessException {
-        TitleEntity titleEntity = new TitleEntity(title.getName());
-        hibernateTemplate.saveOrUpdate(titleEntity);
+    public void create(final Title title) throws DAOException {
+        try {
+            TitleEntity titleEntity = new TitleEntity(title.getName());
+            hibernateTemplate.saveOrUpdate(titleEntity);
+        }
+        catch (DataAccessException e) {
+            throw new DAOException();
+        }
     }
 
     @Transactional(readOnly = false)
-    public void delete (final TitleEntity titleEntity) throws DataAccessException {
-        List<MessageEntity> listMessages = hibernateTemplate.findByNamedQueryAndNamedParam(
-                "findAllMessagesOfTitle", "titleId", titleEntity.getId()
-        );
-        hibernateTemplate.deleteAll(listMessages);
-        hibernateTemplate.delete(titleEntity);
+    public void delete (final TitleEntity titleEntity) throws DAOException {
+        try {
+            List listMessages = hibernateTemplate.findByNamedQueryAndNamedParam(
+                    "findAllMessagesOfTitle", "titleId", titleEntity.getId()
+            );
+            hibernateTemplate.deleteAll(listMessages);
+            hibernateTemplate.delete(titleEntity);
+        }
+        catch (DataAccessException e) {
+            throw new DAOException();
+        }
     }
 
     public List<TitleEntity> findAll() {

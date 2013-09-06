@@ -18,17 +18,18 @@ public interface MessageDao {
      * @param titleId id of title
      * @throws DataAccessException if title with titleId no in database
      */
-    void create(final Message message, final Long titleId) throws DataAccessException;
+    void create(final Message message, final Long titleId) throws DAOException;
 
     /**
      * delete message
      * @param messageEntity message
      * @throws DataAccessException if no messageEntity in database
      */
-    void delete(final MessageEntity messageEntity) throws DataAccessException;
+    void delete(final MessageEntity messageEntity) throws DAOException;
 
     /**
      * get all message with titleId
+     *
      * @param titleId id of title
      * @return list messages
      */

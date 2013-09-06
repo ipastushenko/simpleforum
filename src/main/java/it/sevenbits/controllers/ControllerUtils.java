@@ -33,7 +33,7 @@ final class ControllerUtils {
 
     public static Long getCurrentPage(Long page) {
         if (page == null)
-            return new Long(1);
+            return (long) 1;
         return page;
     }
     /**

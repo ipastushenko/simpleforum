@@ -30,9 +30,9 @@ public class DaoTest {
     @Resource(name="titleDao")
     private TitleDao titleDao;
 
-    @Test(expected = DataAccessException.class)
+    @Test(expected = DAOException.class)
     @Transactional
-    public void deleteMessages() {
+    public void deleteMessages() throws DAOException {
         MessageEntity messageEntity = messageDao.findById(new Long(1));
         TitleEntity titleEntity = titleDao.findById(new Long(1));
         titleDao.delete(titleEntity);
@@ -42,9 +42,9 @@ public class DaoTest {
         messageDao.delete(messageEntity);
     }
 
-    @Test(expected = DataAccessException.class)
+    @Test(expected = DAOException.class)
     @Transactional
-    public void addMessages() {
+    public void addMessages() throws DAOException {
         titleDao.delete(titleDao.findById(new Long(1)));
         messageDao.create(new Message(new Title("Title"), "Message"), new Long(1));
         //messageDao.create(new Message(new Title("Title"), "Message"), new Long(1));
@@ -52,7 +52,7 @@ public class DaoTest {
 
     @Test
     @Transactional
-    public void findTitleById() {
+    public void findTitleById() throws DAOException {
         assertNull(titleDao.findById(new Long(100)));
         for (Long i = new Long(1); i <= 12; ++i)
         {

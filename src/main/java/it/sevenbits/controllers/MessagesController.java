@@ -1,5 +1,6 @@
 package it.sevenbits.controllers;
 
+import it.sevenbits.dao.DAOException;
 import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
@@ -7,7 +8,6 @@ import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.SendMessageForm;
 import it.sevenbits.jsonmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -88,7 +88,7 @@ public class MessagesController {
                     jsonModel = new JsonAddElement();
                 }
             }
-            catch (DataAccessException e) {
+            catch (DAOException e) {
                 listErrors = new ArrayList<>();
                 listErrors.add("Error create new message");
                 jsonModel = new JsonError(listErrors);
@@ -121,7 +121,7 @@ public class MessagesController {
                 messageDao.delete(messageEntity);
                 jsonModel = new JsonRemoveElement();
             }
-            catch (DataAccessException e) {
+            catch (DAOException e) {
                 listErrors = new ArrayList<>();
                 listErrors.add("Error remove this message");
                 jsonModel = new JsonError(listErrors);
@@ -150,7 +150,11 @@ public class MessagesController {
         Long titleId = sendMessageForm.getTitleId();
         if (!result.hasErrors()) {
             Message message = new Message(titleDao.findById(titleId), sendMessageForm.getTextMessage());
-            messageDao.create(message, titleId);
+            try {
+                messageDao.create(message, titleId);
+            } catch (DAOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
         }
         else {
             //TODO:get error message for user
@@ -171,7 +175,11 @@ public class MessagesController {
             MessageEntity messageEntity = messageDao.findById(messageId);
             if (messageEntity != null) {
                 titleId = messageEntity.getTitleEntity().getId();
-                messageDao.delete(messageEntity);
+                try {
+                    messageDao.delete(messageEntity);
+                } catch (DAOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
             }
         }
         ModelAndView modelAndView = createModelMessages(page, titleId);
