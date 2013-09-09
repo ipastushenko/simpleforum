@@ -57,6 +57,11 @@ public class TitleDaoHibernate implements TitleDao {
         return hibernateTemplate.findByNamedQuery("findAllTitle");
     }
 
+    /*public List<TitleEntity> findByLimit(Long limit, Long offset) {
+        return hibernateTemplate.findByNamedQueryAndNamedParam("findTitleByLimitAndOffset",
+                new String[]{"limit", "offset"}, new Object[] {limit, offset});
+    } */
+
     public TitleEntity findById(final Long id) {
         return hibernateTemplate.get(TitleEntity.class, id);
     }

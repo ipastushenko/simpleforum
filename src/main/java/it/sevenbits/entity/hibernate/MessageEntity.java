@@ -17,7 +17,11 @@ import java.io.Serializable;
         @NamedQuery(
             name="findAllMessagesOfTitle",
             query="select m from MessageEntity m where m.titleEntity.id = :titleId"
-        )
+        )/*,
+        @NamedQuery(
+                name="findMessagesByTitleByLimitAndOffset",
+                query="select m from MessageEntity m where m.titleEntity.id = :titleId limit :limit offset :offset"
+        ) */
 })
 @Table(name="message")
 public class MessageEntity extends Message implements Serializable {

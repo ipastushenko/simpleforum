@@ -1,5 +1,6 @@
 package it.sevenbits.controllers;
 
+import javax.servlet.http.HttpServletResponse;
 import it.sevenbits.dao.DAOException;
 import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Message;
@@ -10,15 +11,16 @@ import it.sevenbits.jsonmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.Validator;
-import org.springframework.web.bind.WebDataBinder;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import it.sevenbits.dao.MessageDao;
 
@@ -68,12 +70,12 @@ public class MessagesController {
     }
 
     @RequestMapping(value = "/json/messages", method = RequestMethod.POST)
-    public @ResponseBody JsonBase addNewMessage(@Valid final SendMessageForm sendMessageForm, final BindingResult result) {
+    public @ResponseBody JsonBase addNewMessage(@RequestBody final SendMessageForm sendMessageForm, final HttpServletResponse result) {
         JsonBase jsonModel = null;
         List<String> listErrors = null;
         Long titleId = sendMessageForm.getTitleId();
-
-        if (!result.hasErrors()) {
+        Set<ConstraintViolation<SendMessageForm>> failures = validator.validate(sendMessageForm);
+        if (failures.isEmpty()) {
 
             try {
                 TitleEntity titleEntity = titleDao.findById(titleId);
@@ -95,11 +97,10 @@ public class MessagesController {
             }
         }
         else {
+            Iterator<ConstraintViolation<SendMessageForm>> iterator = failures.iterator();
             listErrors = new ArrayList<>();
-            List<ObjectError> errors = result.getAllErrors();
-            for (int i = 0; i < errors.size(); ++i) {
-                listErrors.add(errors.get(i).getDefaultMessage());
-            }
+            while(iterator.hasNext())
+                listErrors.add(iterator.next().getMessage());
             jsonModel = new JsonError(listErrors);
         }
 
@@ -188,10 +189,10 @@ public class MessagesController {
     }
     //TODO:TO REMOVE FUNCTIONS /***
 
-    @InitBinder
+    /*@InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(validator);
-    }
+    } */
 
     //TODO:TO REMOVE FUNCTIONS ***
     private ModelAndView createModelMessages(final Long page, final Long titleId) {

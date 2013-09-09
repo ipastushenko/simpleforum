@@ -21,11 +21,11 @@ import java.util.List;
  * @author Ivan Pastushenko
  * @version 1.0.0 04.09.2013
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+/*@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:application-test.xml"})
-@TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")
+@TransactionConfiguration(defaultRollback = true, transactionManager = "transactionManager")*/
 public class DaoTest {
-    @Resource(name="messageDao")
+/*    @Resource(name="messageDao")
     private MessageDao messageDao;
     @Resource(name="titleDao")
     private TitleDao titleDao;
@@ -73,6 +73,6 @@ public class DaoTest {
 
         //titleDao.findById(new Long(1)));
         //List<MessageEntity> listMessageEntities = messageDao.findByTitleId(new Long(1));
-        //*/
-    }
+        //
+    }     */
 }

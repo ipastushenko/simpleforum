@@ -55,6 +55,12 @@ public class MessageDaoHibernate implements MessageDao {
         return hibernateTemplate.findByNamedQueryAndNamedParam("findAllMessagesOfTitle", "titleId", titleId);
     }
 
+    /*@Override
+    public List<TitleEntity> findByTitleIdByLimit(Long titleId, Long limit, Long offset) {
+        return hibernateTemplate.findByNamedQueryAndNamedParam("findMessagesByTitleByLimitAndOffset",
+                new String[] {"titleId", "limit", "offset"}, new Object[] {titleId, limit, offset});
+    } */
+
     public MessageEntity findById(final Long id) {
         return hibernateTemplate.get(MessageEntity.class, id);
     }

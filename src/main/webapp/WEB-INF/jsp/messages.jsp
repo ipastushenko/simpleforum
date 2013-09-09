@@ -4,6 +4,9 @@
 <head>
     <title>Simple forum</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/main.css"/>' />
+    <script type="text/javascript" src='<c:url value="/resources/js/libs/jquery-1.10.2.min.js"/>'  language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/js/libs/jquery-ui.min.js"/>'  language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/js/libs/json.min.js"/>'  language="javascript"> </script>
     <script type="text/javascript" src='<c:url value="/resources/js/formValidate.js"/>'  language="javascript"> </script>
 </head>
 <body>
@@ -54,12 +57,14 @@
                         <tr>
                             <td>
                                 <spring:url var = "action" value='/json/messages' />
-                                <form method="post" action="${action}">
+                                <form id="sendMessage" method="post" action="${action}">
                                     <input type="hidden" name="titleId" value="<c:out value="${titleId}" />"/>
-                                    <input type="hidden" name="page" value="<c:out value="${page}" />"/>
                                     <input type="text" name="textMessage" maxlength="256" />
                                     <input type="submit" value="Send message" />
                                 </form>
+                                <script type="text/javascript">
+                                     addAjax("${action}");
+                                </script>
                             </td>
                         </tr>
                     </th>
@@ -67,5 +72,17 @@
             </tbody>
         </table>
     </div>
+
+    <div id="send" title="Create new Title">
+      <p class="validateTips">All form fields are required.</p>
+
+      <form id = "newSend">
+      <fieldset>
+        <input type="hidden" name="titleId" value="<c:out value="${titleId}" />"/>
+        <input type="text" name="textMessage" maxlength="256" />
+      </fieldset>
+      </form>
+    </div>
+
 </body>
 </html>

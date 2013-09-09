@@ -5,19 +5,25 @@ import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Title;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.AddTitleForm;
+import it.sevenbits.forms.SendMessageForm;
 import it.sevenbits.jsonmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.validation.Validator;
+import javax.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * TitlesController
@@ -30,6 +36,12 @@ public class TitlesController {
     private TitleDao titleDao;
     @Autowired
     private Validator validator;
+
+    @RequestMapping(value = "/singlepage", method = RequestMethod.GET)
+    public String viewSingletonPage(Model model) {
+        model.addAttribute("countElements", ControllerUtils.getCountRow(TitlesController.class));
+        return "singlepage";
+    }
 
     @RequestMapping(value = "/json/titles/{page:\\d+}", method = RequestMethod.GET)
     public @ResponseBody JsonBase getListTitles(@PathVariable final Long page) {
@@ -80,10 +92,11 @@ public class TitlesController {
     }
 
     @RequestMapping(value = "/json/titles", method = RequestMethod.POST)
-    public @ResponseBody JsonBase addNewTitle(@Valid final AddTitleForm addTitleForm, final BindingResult result) {
+    public @ResponseBody JsonBase addNewTitle(@RequestBody final AddTitleForm addTitleForm, final HttpServletResponse response) {
         JsonBase jsonModel;
         List<String> listErrors;
-        if (!result.hasErrors()) {
+        Set<ConstraintViolation<AddTitleForm>> failures = validator.validate(addTitleForm);
+        if (failures.isEmpty()) {
             try {
                 Title title = new Title(addTitleForm.getName());
                 titleDao.create(title);
@@ -97,10 +110,9 @@ public class TitlesController {
         }
         else {
             listErrors = new ArrayList<>();
-            List<ObjectError> errors = result.getAllErrors();
-            for (ObjectError error : errors) {
-                listErrors.add(error.getDefaultMessage());
-            }
+            Iterator<ConstraintViolation<AddTitleForm>> iterator = failures.iterator();
+            while(iterator.hasNext())
+                listErrors.add(iterator.next().getMessage());
             jsonModel = new JsonError(listErrors);
         }
 
@@ -150,10 +162,10 @@ public class TitlesController {
     }
     //TODO: TO REMOVE FUNCTIONS /***
 
-    @InitBinder
+    /*@InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.setValidator(validator);
-    }
+    } */
 
     //TODO: TO REMOVE FUNCTIONS ***
     private ModelAndView createModelTitles(final Long page)

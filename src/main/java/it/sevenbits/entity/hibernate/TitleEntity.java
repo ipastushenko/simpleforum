@@ -17,7 +17,11 @@ import java.io.Serializable;
         @NamedQuery(
                 name="findAllTitle",
                 query="select t from TitleEntity t"
-        )
+        )/*,
+        @NamedQuery(
+                name="findTitleByLimitAndOffset",
+                query="select t from TitleEntity t limit :limit offset :offset"
+        )  */
 })
 public class TitleEntity extends Title implements Serializable{
     private static final long serialVersionUID = 2194724481956723413L;

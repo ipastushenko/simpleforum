@@ -1,5 +1,8 @@
 package it.sevenbits.jsonmodels;
 
+import it.sevenbits.entity.hibernate.TitleEntity;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +16,7 @@ public class JsonPage extends JsonBase {
     private int countPages;
     private List<String> elements;
     private List<Long> elementIds;
+    private List<TitleEntity> arrayList = new ArrayList<>();
 
     public JsonPage(
             final int currentPage, final int countPages,
@@ -23,6 +27,10 @@ public class JsonPage extends JsonBase {
         this.currentPage = currentPage;
         this.elements = elements;
         this.elementIds = elementIds;
+        TitleEntity titleEntity = new TitleEntity();
+        titleEntity.setId((long)1);
+        titleEntity.setName("Hello");
+        arrayList.add(titleEntity);
     }
 
     public int getCurrentPage() {
@@ -41,6 +49,10 @@ public class JsonPage extends JsonBase {
         return elementIds;
     }
 
+    public List<TitleEntity> getArrayList() {
+        return arrayList;
+    }
+
     public void setCurrentPage(final int currentPage) {
         this.currentPage = currentPage;
     }
@@ -55,5 +67,9 @@ public class JsonPage extends JsonBase {
 
     public void setElementIds(final List<Long> elementIds) {
         this.elementIds = elementIds;
+    }
+
+    public void setArrayList(final List<TitleEntity> arrayList) {
+        this.arrayList = arrayList;
     }
 }

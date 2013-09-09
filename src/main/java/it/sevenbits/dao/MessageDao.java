@@ -2,6 +2,7 @@ package it.sevenbits.dao;
 
 import it.sevenbits.entity.Message;
 import it.sevenbits.entity.hibernate.MessageEntity;
+import it.sevenbits.entity.hibernate.TitleEntity;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
@@ -34,6 +35,14 @@ public interface MessageDao {
      * @return list messages
      */
     List<MessageEntity> findByTitleId(final Long titleId);
+
+    /**
+     * get messages by limit
+     * @param limit limit
+     * @param offset offset
+     * @return list of messages
+     */
+    /*List<TitleEntity> findByTitleIdByLimit(final Long titleId, final Long limit, final Long offset);*/
 
     /**
      * get message by id

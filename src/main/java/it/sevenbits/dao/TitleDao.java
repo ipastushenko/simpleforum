@@ -29,9 +29,17 @@ public interface TitleDao {
 
     /**
      * get all titles
-     * @return list titles
+     * @return list of titles
      */
     List<TitleEntity> findAll();
+
+    /**
+     * get titles by limit
+     * @param limit limit
+     * @param offset offset
+     * @return list of titles
+     */
+    /*List<TitleEntity> findByLimit(final Long limit, final Long offset);*/
 
     /**
      * get title by id
