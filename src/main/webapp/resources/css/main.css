@@ -1,0 +1,41 @@
+.scrolldiv {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.nullheight {
+    hight: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fullwidth {
+    width: 100%
+}
+
+.messagesBox {
+    height: 50px
+}
+
+.topic {
+    margin: 10px;
+}
+
+.divtopic {
+    height: 40px;
+    margin: 10px;
+}
+
+.deleted {
+    position: absolute;
+    visibility: hidden;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.margintop {
+    margin-top: 10px;
+}

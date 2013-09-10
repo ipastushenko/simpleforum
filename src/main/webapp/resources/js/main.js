@@ -1,93 +1,63 @@
-function lastAddedLiveFunc(url)
-{
-    $('div#lastPostsLoader').html('last post');
+function appendTopic(tbody, createtime, changetime, name, id) {
+    tbody.append('<tr>');
+    tbody.append('<td class="span3"><p class="text-center">'+ createtime + '</p></td>');
+    tbody.append('<td class="span3"><p class="text-center">'+ changetime + '</p></td>');
+    //TODO:url value;
+    tbody.append('<td class="span5"><a href=\'<c:url value="/"/>\'>'+ name + '</a></td>');
+    tbody.append('<td class="span1"><p class="text-center"><a href=\'<c:url value="/"/>\'>'+ id +'</a></p></td>');
+    tbody.append('</tr>');
+}
 
-    $.getJSON(url + '/1', {}, function(data){
-        if (data != "") {
-            //console.log('add data..');
-            $(".items").append('<li>ASdASd</li>');
+function clickCreateNewTopic(url) {
+    var nameSerialize = form.serializeObject();
+    $.postJSON(url+'json/titles', nameSerialize, function(data) {
+        if (data.success){
+            //TODO: Add to database and update topicTable
+            $('#modalCreateTopic').modal('hide');
+            $('#inputNameTopic').val('');
+            $('#errorCreateTopic').slideUp(0);
         }
-        $('div#lastPostsLoader').empty();
+        else {
+            var error = "Error: " + data.errors[0];
+            $('#errorCreateTopic').html(error);
+            $('#errorCreateTopic').fadeIn(0);
+        }
     });
-};
+}
 
 function addAjax(url) {
     $(document).ready(function() {
-
-       /* $('#sendMessage').submit(function() {
-            $("#send").dialog("open");
-            /*var sendMessage = $(this).serializeObject();
-            $.postJSON(url, sendMessage, function(data) {
-                if (data.success) {
-                    alert("Complete");
-                }
-                else {
-                    alert("Error: " + data.errors[0]);
-                }
-            });*/
-         /*   return false;
+        $('#btnCreateNewTopic').click(function() {
+            clickCreateNewTopic(url);
         });
 
+        $('#closeCreateTopic').click(function() {
+            $('#errorCreateTopic').slideUp(0);
+        });
 
-        $("#send").dialog({
-            autoOpen: false,
-            height: 150,
-            width: 300,
-            modal: true,
-            buttons: {
-                "Create topic": function() {
-                    var addTopic = $("#newSend").serializeObject();
-                    $.postJSON(url, addTopic, function(data) {
-                        if (data.success) {
-                            $("#send").dialog("close");
-                            alert("success");
-                        }
-                        else {
-                            alert("Error :" + data.errors[0]);
-                        }
-                    });
-                },
-            },
-            close: function() {
-                $(this).dialog("close");
+//TODO:temlate adding topics
+        $.getJSON(url + 'json/titles/1', {}, function(data) {
+            var tbody = $('#topicBody');
+            tbody.html('');
+            if (data.success) {
+                for (var i in data.elements) {
+                    appendTopic(tbody, 'UTS', 'UTS', data.elements[i], data.elementIds[i]);
+                }
             }
-        });      */
-        $(window).scroll(function(){
-            var wintop = $(window).scrollTop(), docheight = $(document).height(), winheight = $(window).height();
-            var  scrolltrigger = 0.95;
-            if  ((wintop/(docheight-winheight)) > scrolltrigger) {
-             //console.log('scroll bottom');
-             lastAddedLiveFunc(url);
+            else {
+                alert('incorrect get');
+            }
+        });
+        $.getJSON(url + 'json/titles/2', {}, function(data) {
+            var tbody = $('#topicBody');
+            if (data.success) {
+                for (var i in data.elements) {
+                    appendTopic(tbody, 'UTS', 'UTS', data.elements[i], data.elementIds[i]);
+                }
+            }
+            else {
+                alert('incorrect get');
             }
         });
     });
 }
-
- /*$("#sendMessage").submit(function (){
-    alert('ok');
-    /*var sendMessageForm = $(this).serializeObject();
-    $.postJSON("json/message", sendMessageForm, function(data) {
-        qwdqwd;
-    });*/
-
-   /* return false;
-    /*var titleId = $('#titleId').val();
-    var message = $('#textMessage').val();
-    $.ajax({
-    type: "POST",
-    url: "/json/messages",
-    data: "/" + titleId + "/" + message,
-    success: function(response){
-        $('#info').html(response);
-        $('#titleId').val('');
-        $('#textMessage').val('');
-    },
-    error: function(e){
-        alert('Error: ' + e);
-    }
-    });*/
-/*});
-
-/*$("#sendAllert").live('submit', function() {
-    alert("FORM SUBMITTED");
-});*/
