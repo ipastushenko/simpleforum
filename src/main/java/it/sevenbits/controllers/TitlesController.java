@@ -5,25 +5,21 @@ import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Title;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.AddTitleForm;
-import it.sevenbits.forms.SendMessageForm;
 import it.sevenbits.jsonmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
+
 import javax.validation.Validator;
-import org.springframework.web.bind.WebDataBinder;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * TitlesController
@@ -43,28 +39,49 @@ public class TitlesController {
         return "singlepage";
     }
 
-    @RequestMapping(value = "/json/titles/{page:\\d+}", method = RequestMethod.GET)
-    public @ResponseBody JsonBase getListTitles(@PathVariable final Long page) {
-        JsonBase jsonModel;
-        if (page.intValue() == 0) {
-            List<String> listErrors = new ArrayList<>();
-            listErrors.add("page must be not zero");
-            jsonModel = new JsonError(listErrors);
+    @RequestMapping(value = "/json/titles/{date:\\d+}/{count:\\d+}/{order:\\d+}", method = RequestMethod.GET)
+    public @ResponseBody JsonBase getListTitles(
+            @PathVariable final Long date, @PathVariable final Long count, @PathVariable final Long order
+    ) {
+        String currentOrder;
+        if (order.intValue() == 0) {
+            currentOrder = "createDate";
+        }
+        else if (order.intValue() == 1) {
+            currentOrder = "lastUpdateDate";
         }
         else {
-            List<TitleEntity> listTitleEntities = titleDao.findAll();
-            int countRows = ControllerUtils.getCountRow(TitlesController.class);
-            int countPages = ControllerUtils.getCountPages(listTitleEntities.size(), countRows);
-            int currentPage = ControllerUtils.getCurrentPage(page, countPages);
-            List<String> listElements = new ArrayList<>();
-            List<Long> listElementIds = new ArrayList<>();
-            for (int i = (currentPage - 1) * countRows; i < currentPage * countRows && i < listTitleEntities.size(); ++i) {
-                listElements.add(listTitleEntities.get(i).getName());
-                listElementIds.add(listTitleEntities.get(i).getId());
-            }
-            jsonModel = new JsonPage(currentPage, countPages, listElements, listElementIds);
+            List<String> errors = new ArrayList<>();
+            errors.add("incorrect order");
+            return new JsonError(errors);
         }
-        return jsonModel;
+
+        Long beginDate;
+        if (date.intValue() == 0) {
+            beginDate = (new Date()).getTime();
+        }
+        else {
+            beginDate = date;
+        }
+
+        List<TitleEntity> listTitleEntities = titleDao.findByLimitByOrder(count + 1, beginDate, currentOrder);
+        Long endDate = beginDate;
+        long time = 0;
+        if (listTitleEntities.size() <= count)
+            time = -1;
+        if (!listTitleEntities.isEmpty())
+        {
+            if (order == 0) {
+                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getCreateDate() + time;
+            }
+            else {
+                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getLastUpdateDate() + time;
+            }
+        }
+        else {
+            endDate = (long)0;
+        }
+        return new JsonPage<TitleEntity>(endDate, listTitleEntities);
     }
 
     @RequestMapping(value = "/json/removeTitle/{titleId:\\d+}", method = RequestMethod.GET)

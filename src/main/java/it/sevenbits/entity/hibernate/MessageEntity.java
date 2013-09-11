@@ -5,6 +5,7 @@ import it.sevenbits.entity.Title;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Message entity
@@ -17,17 +18,14 @@ import java.io.Serializable;
         @NamedQuery(
             name="findAllMessagesOfTitle",
             query="select m from MessageEntity m where m.titleEntity.id = :titleId"
-        )/*,
-        @NamedQuery(
-                name="findMessagesByTitleByLimitAndOffset",
-                query="select m from MessageEntity m where m.titleEntity.id = :titleId limit :limit offset :offset"
-        ) */
+        )
 })
 @Table(name="message")
 public class MessageEntity extends Message implements Serializable {
     private static final long serialVersionUID = 4385234262720442213L;
     private Long id;
     private TitleEntity titleEntity;
+    private Long createDate = (new Date()).getTime();
 
     public MessageEntity() {
         super();
@@ -57,6 +55,11 @@ public class MessageEntity extends Message implements Serializable {
         return super.getTextMessage();
     }
 
+    @Column(name = "createDate", nullable = false)
+    public Long getCreateDate() {
+        return createDate;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -64,5 +67,9 @@ public class MessageEntity extends Message implements Serializable {
     public void setTitleEntity(TitleEntity titleEntity) {
         this.titleEntity = titleEntity;
         super.setTitle(titleEntity);
+    }
+
+    public void setCreateDate(Long createDate) {
+        this.createDate = createDate;
     }
 }

@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import it.sevenbits.dao.MessageDao;
 
@@ -38,35 +35,37 @@ public class MessagesController {
     @Autowired
     private Validator validator;
 
-    @RequestMapping(value = "/json/messages/{titleId:\\d+}/{page:\\d+}", method = RequestMethod.GET)
-    public @ResponseBody JsonBase getListMessages(@PathVariable final Long titleId,@PathVariable final Long page) {
-        JsonBase jsonModel = null;
-        List<String> listErrors = null;
-        TitleEntity titleEntity = titleDao.findById(titleId);
-        if (titleEntity == null || page.intValue() == 0) {
-            listErrors = new ArrayList<>();
-            if (titleEntity == null) {
-                listErrors.add("Title is not exist");
-            }
-            if (page.intValue() == 0) {
-                listErrors.add("page must be not zero");
-            }
-            jsonModel = new JsonError(listErrors);
+    @RequestMapping(value = "/json/messages/{titleId:\\d+}/{date:\\d+}/{count:\\d+}", method = RequestMethod.GET)
+    public @ResponseBody JsonBase getListMessages(
+            @PathVariable final Long titleId, @PathVariable final Long date, @PathVariable final Long count
+    ) {
+        String currentOrder = "createDate";
+        Long beginDate;
+        if (date.intValue() == 0) {
+            beginDate = (new Date()).getTime();
         }
         else {
-            List<MessageEntity> listMessageEntities = messageDao.findByTitleId(titleId);
-            int countRows = ControllerUtils.getCountRow(MessagesController.class);
-            int countPages = ControllerUtils.getCountPages(listMessageEntities.size(), countRows);
-            int currentPage = ControllerUtils.getCurrentPage(page, countPages);
-            List<String> listElements = new ArrayList<>();
-            List<Long> listElementIds = new ArrayList<>();
-            for (int i = (currentPage - 1) * countRows; i < currentPage * countRows && i < listMessageEntities.size(); ++i) {
-                listElements.add(listMessageEntities.get(i).getTextMessage());
-                listElementIds.add(listMessageEntities.get(i).getId());
-            }
-            jsonModel = new JsonPage(currentPage, countPages, listElements, listElementIds);
+            beginDate = date;
         }
-        return jsonModel;
+
+        List<MessageEntity> listMessageEntities = messageDao.findByTitleIdByLimitByOrder(
+                titleId, count + 1, beginDate, currentOrder
+        );
+        Long endDate = beginDate;
+        long time = 0;
+        if (listMessageEntities.size() <= count)
+            time = -1;
+        if (!listMessageEntities.isEmpty())
+        {
+            if (listMessageEntities.size() <= count)
+                endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate() + time;
+        }
+        else {
+            endDate = (long)0;
+        }
+
+
+        return new JsonPage<MessageEntity>(endDate, listMessageEntities);
     }
 
     @RequestMapping(value = "/json/messages", method = RequestMethod.POST)

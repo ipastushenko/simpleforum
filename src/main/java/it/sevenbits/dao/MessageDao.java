@@ -5,6 +5,7 @@ import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import org.springframework.dao.DataAccessException;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public interface MessageDao {
      * @param offset offset
      * @return list of messages
      */
-    /*List<TitleEntity> findByTitleIdByLimit(final Long titleId, final Long limit, final Long offset);*/
+    List<MessageEntity> findByTitleIdByLimitByOrder(final Long titleId, final Long limit, final Long offset, final String order);
 
     /**
      * get message by id

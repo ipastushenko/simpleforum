@@ -1,8 +1,6 @@
 package it.sevenbits.jsonmodels;
 
-import it.sevenbits.entity.hibernate.TitleEntity;
-
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,66 +8,30 @@ import java.util.List;
  * @author Ivan Pastushenko @ sevenbits
  * @version 1.0.0 06.09.2013
  */
-public class JsonPage extends JsonBase {
+public class JsonPage<T> extends JsonBase {
     private static final long serialVersionUID = -3741716781143989506L;
-    private int currentPage;
-    private int countPages;
-    private List<String> elements;
-    private List<Long> elementIds;
-    private List<TitleEntity> arrayList = new ArrayList<>();
+    private Long endDate;
+    private List<T> elements;
 
-    public JsonPage(
-            final int currentPage, final int countPages,
-            final List<String> elements,final List<Long> elementIds
-    ) {
+    public JsonPage(final Long endDate, final List<T> elements) {
         super(true);
-        this.countPages = countPages;
-        this.currentPage = currentPage;
+        this.endDate = endDate;
         this.elements = elements;
-        this.elementIds = elementIds;
-        TitleEntity titleEntity = new TitleEntity();
-        titleEntity.setId((long)1);
-        titleEntity.setName("Hello");
-        arrayList.add(titleEntity);
     }
 
-    public int getCurrentPage() {
-        return currentPage;
+    public Long getEndDate() {
+        return endDate;
     }
 
-    public int getCountPages() {
-        return countPages;
-    }
-
-    public List<String> getElements() {
+    public List<T> getElements() {
         return elements;
     }
 
-    public List<Long> getElementIds() {
-        return elementIds;
+    public void setEndDate(final Long endDate) {
+        this.endDate = endDate;
     }
 
-    public List<TitleEntity> getArrayList() {
-        return arrayList;
-    }
-
-    public void setCurrentPage(final int currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public void setCountPages(final int countPages) {
-        this.countPages = countPages;
-    }
-
-    public void setElements(final List<String> elements) {
+    public void setElements(final List<T> elements) {
         this.elements = elements;
-    }
-
-    public void setElementIds(final List<Long> elementIds) {
-        this.elementIds = elementIds;
-    }
-
-    public void setArrayList(final List<TitleEntity> arrayList) {
-        this.arrayList = arrayList;
     }
 }

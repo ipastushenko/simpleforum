@@ -4,6 +4,7 @@ import it.sevenbits.entity.Title;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import org.springframework.dao.DataAccessException;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ public interface TitleDao {
      * @param offset offset
      * @return list of titles
      */
-    /*List<TitleEntity> findByLimit(final Long limit, final Long offset);*/
+    List<TitleEntity> findByLimitByOrder(final Long limit, final Long offset, final String order);
 
     /**
      * get title by id
