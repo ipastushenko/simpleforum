@@ -39,3 +39,13 @@
 .margintop {
     margin-top: 10px;
 }
+
+.spanReference {
+    color: #00f;
+    text-decoration: none;
+}
+
+.spanReference:hover {
+    color: #f00;
+    text-decoration: underline;
+}

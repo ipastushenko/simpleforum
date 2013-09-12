@@ -49,21 +49,31 @@ public class MessagesController {
         }
 
         List<MessageEntity> listMessageEntities = messageDao.findByTitleIdByLimitByOrder(
-                titleId, count + 1, beginDate, currentOrder
+                titleId, count, beginDate, currentOrder
         );
+
         Long endDate = beginDate;
+        if (!listMessageEntities.isEmpty())
+            endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate();
+        List<MessageEntity> listMessageEndDateEntities = messageDao.findByTitleIdByDate(titleId, endDate, currentOrder);
+        int countEndDate = 1;
+        for (int i = listMessageEntities.size() - 1; i > 0; --i)
+            if (listMessageEntities.get(i).getCreateDate().equals(listMessageEntities.get(i - 1).getCreateDate()))
+                ++countEndDate;
+
+        for (int i = countEndDate; i < listMessageEndDateEntities.size(); ++i)
+            listMessageEntities.add(listMessageEndDateEntities.get(i));
+
         long time = 0;
         if (listMessageEntities.size() <= count)
             time = -1;
         if (!listMessageEntities.isEmpty())
         {
-            if (listMessageEntities.size() <= count)
-                endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate() + time;
+            endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate() + time;
         }
         else {
             endDate = (long)0;
         }
-
 
         return new JsonPage<MessageEntity>(endDate, listMessageEntities);
     }
@@ -129,91 +139,4 @@ public class MessagesController {
         }
         return jsonModel;
     }
-
-
-    //TODO:TO REMOVE FUNCTIONS ***
-    @RequestMapping(value = "/messages/{titleId}/{page}", method = RequestMethod.GET)
-    public ModelAndView viewMessages(
-        @PathVariable final Long titleId,
-        @PathVariable final Long page
-    ) {
-        ModelAndView modelAndView = createModelMessages(page, titleId);
-        return  modelAndView;
-    }
-
-    @RequestMapping(value = "/messages", method = RequestMethod.POST)
-    public ModelAndView addMessage(
-        @Valid final SendMessageForm sendMessageForm,
-        final BindingResult result
-    ) {
-        Long page = new Long(1);
-        Long titleId = sendMessageForm.getTitleId();
-        if (!result.hasErrors()) {
-            Message message = new Message(titleDao.findById(titleId), sendMessageForm.getTextMessage());
-            try {
-                messageDao.create(message, titleId);
-            } catch (DAOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-        }
-        else {
-            //TODO:get error message for user
-        }
-
-        ModelAndView modelAndView = createModelMessages(page, titleId);
-
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/removeMessage/{messageId}/{page}", method = RequestMethod.GET)
-    public ModelAndView deleteMessage(
-            @PathVariable final Long messageId,
-            @PathVariable final Long page
-    ) {
-        Long titleId = new Long(0);
-        if (messageId != null) {
-            MessageEntity messageEntity = messageDao.findById(messageId);
-            if (messageEntity != null) {
-                titleId = messageEntity.getTitleEntity().getId();
-                try {
-                    messageDao.delete(messageEntity);
-                } catch (DAOException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
-            }
-        }
-        ModelAndView modelAndView = createModelMessages(page, titleId);
-
-        return  modelAndView;
-    }
-    //TODO:TO REMOVE FUNCTIONS /***
-
-    /*@InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        binder.setValidator(validator);
-    } */
-
-    //TODO:TO REMOVE FUNCTIONS ***
-    private ModelAndView createModelMessages(final Long page, final Long titleId) {
-        ModelAndView modelAndView = null;
-        if (titleId == null) {
-            modelAndView = new ModelAndView("redirect:/titles/1");
-        }
-        else {
-            Long currentPage = ControllerUtils.getCurrentPage(page);
-            modelAndView = new ModelAndView("messages");
-            List<MessageEntity> list = messageDao.findByTitleId(titleId);
-            int countRow = ControllerUtils.getCountRow(getClass());
-
-            modelAndView.addObject("pagePrev", ControllerUtils.getPagePrev(currentPage.intValue()));
-            modelAndView.addObject("pageNext", ControllerUtils.getPageNext(currentPage.intValue(), countRow, list.size()));
-            modelAndView.addObject("messages", ControllerUtils.<MessageEntity>getListEntity(list, countRow, currentPage.intValue()));
-            modelAndView.addObject("titleId", titleId);
-            modelAndView.addObject("title", titleDao.findById(titleId).getName());
-            modelAndView.addObject("page", currentPage);
-        }
-
-        return modelAndView;
-    }
-    //TODO:TO REMOVE FUNCTIONS /***
 }

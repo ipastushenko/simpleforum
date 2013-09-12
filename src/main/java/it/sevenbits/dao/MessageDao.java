@@ -30,20 +30,20 @@ public interface MessageDao {
     void delete(final MessageEntity messageEntity) throws DAOException;
 
     /**
-     * get all message with titleId
-     *
-     * @param titleId id of title
-     * @return list messages
-     */
-    List<MessageEntity> findByTitleId(final Long titleId);
-
-    /**
      * get messages by limit
      * @param limit limit
      * @param offset offset
      * @return list of messages
      */
     List<MessageEntity> findByTitleIdByLimitByOrder(final Long titleId, final Long limit, final Long offset, final String order);
+
+    /**
+     * get messages by title by date by order
+     * @param titleId title id
+     * @param date date create
+     * @return list of messages
+     */
+    List<MessageEntity> findByTitleIdByDate(final Long titleId, final Long date, final String order);
 
     /**
      * get message by id

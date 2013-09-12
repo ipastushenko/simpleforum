@@ -3,6 +3,7 @@ package it.sevenbits.controllers;
 import it.sevenbits.dao.DAOException;
 import it.sevenbits.dao.TitleDao;
 import it.sevenbits.entity.Title;
+import it.sevenbits.entity.hibernate.MessageEntity;
 import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.AddTitleForm;
 import it.sevenbits.jsonmodels.*;
@@ -64,10 +65,31 @@ public class TitlesController {
             beginDate = date;
         }
 
-        List<TitleEntity> listTitleEntities = titleDao.findByLimitByOrder(count + 1, beginDate, currentOrder);
+        List<TitleEntity> listTitleEntities = titleDao.findByLimitByOrder(count, beginDate, currentOrder);
+
         Long endDate = beginDate;
+        if (!listTitleEntities.isEmpty())
+        {
+            if (order == 0) {
+                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getCreateDate();
+            }
+            else {
+                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getLastUpdateDate();
+            }
+        }
+        List<TitleEntity> listTitleEndDateEntities = titleDao.findByDateByOrder(endDate, currentOrder);
+        int countEndDate = 1;
+        for (int i = listTitleEntities.size() - 1; i > 0; --i)
+            if ((listTitleEntities.get(i).getCreateDate().equals(listTitleEntities.get(i - 1).getCreateDate()) &&
+                    order.intValue() == 0) || (order.intValue() == 1 &&
+                    listTitleEntities.get(i).getLastUpdateDate().equals(listTitleEntities.get(i - 1).getLastUpdateDate())))
+                ++countEndDate;
+
+        for (int i = countEndDate; i < listTitleEndDateEntities.size(); ++i)
+            listTitleEntities.add(listTitleEndDateEntities.get(i));
+
         long time = 0;
-        if (listTitleEntities.size() <= count)
+        if (listTitleEntities.size() <= count.intValue() + countEndDate - 1)
             time = -1;
         if (!listTitleEntities.isEmpty())
         {
@@ -135,69 +157,4 @@ public class TitlesController {
 
         return jsonModel;
     }
-
-    //TODO: TO REMOVE FUNCTIONS ***
-    @RequestMapping(value = "/titles/{page}", method = RequestMethod.GET)
-    public ModelAndView viewTitles(@PathVariable final Long page) {
-        return createModelTitles(page);
-    }
-
-    @RequestMapping(value = "/removeTitle/{titleId}/{page}", method = RequestMethod.GET)
-    public ModelAndView deleteTitle(@PathVariable final Long titleId, @PathVariable final Long page) {
-        if (titleId != null) {
-            TitleEntity title = titleDao.findById(titleId);
-            if (title != null)
-                try {
-                    titleDao.delete(title);
-                } catch (DAOException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
-        }
-
-        return createModelTitles(page);
-    }
-
-    @RequestMapping(value = "/titles", method = RequestMethod.POST)
-    public ModelAndView addTitle(
-            @Valid final AddTitleForm addTitleForm,
-            final BindingResult result
-    ) {
-        Long page = (long) 1;
-        if (!result.hasErrors()) {
-            Title title = new Title(addTitleForm.getName());
-            try {
-                titleDao.create(title);
-            } catch (DAOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-        }
-        else {
-            //TODO:get error message for user
-        }
-
-        return createModelTitles(page);
-    }
-    //TODO: TO REMOVE FUNCTIONS /***
-
-    /*@InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        binder.setValidator(validator);
-    } */
-
-    //TODO: TO REMOVE FUNCTIONS ***
-    private ModelAndView createModelTitles(final Long page)
-    {
-        Long currentPage = ControllerUtils.getCurrentPage(page);
-        ModelAndView modelAndView = new ModelAndView("titles");
-        List<TitleEntity> list = titleDao.findAll();
-        int countRow = ControllerUtils.getCountRow(getClass());
-
-        modelAndView.addObject("pagePrev", ControllerUtils.getPagePrev(currentPage.intValue()));
-        modelAndView.addObject("pageNext", ControllerUtils.getPageNext(currentPage.intValue(), countRow, list.size()));
-        modelAndView.addObject("titles", ControllerUtils.<TitleEntity>getListEntity(list, countRow, currentPage.intValue()));
-        modelAndView.addObject("page", currentPage);
-
-        return modelAndView;
-    }
-    //TODO: TO REMOVE FUNCTIONS /***
 }

@@ -9,17 +9,17 @@
     <file path="/MessagesControler.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1377863526047" ignored="false" />
     <file path="/common.properties" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1377861704828" ignored="false" />
     <file path="/a.dummy" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378705971549" ignored="false" />
-    <file path="/TitlesController.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378886136250" ignored="false" />
+    <file path="/TitlesController.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378983749147" ignored="false" />
     <file path="/messages.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378718372831" ignored="false" />
     <file path="/web.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378711082814" ignored="false" />
     <file path="/index.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378721151897" ignored="false" />
     <file path="/hibernate.properties" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378090659345" ignored="false" />
     <file path="/SimpleForum-servlet.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378713629687" ignored="false" />
-    <file path="/MessagesController.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378886020282" ignored="false" />
-    <file path="/TitleDao.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378885843698" ignored="false" />
+    <file path="/MessagesController.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378982043683" ignored="false" />
+    <file path="/TitleDao.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378980425026" ignored="false" />
     <file path="$PROJECT_DIR$/../../n-exchange/n-exchange/src/main/resources/local/application-context-dao.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378092321850" ignored="false" />
     <file path="/application-context-dao.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378110182671" ignored="false" />
-    <file path="/TitleDaoHibernate.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378885858244" ignored="false" />
+    <file path="/TitleDaoHibernate.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378983765874" ignored="false" />
     <file path="/Title.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378708395102" ignored="false" />
     <file path="/Message.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378708719438" ignored="false" />
     <file path="/MessageEntity.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378885720914" ignored="false" />
@@ -27,8 +27,8 @@
     <file path="/pom.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378710590285" ignored="false" />
     <file path="/titles.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378696169291" ignored="false" />
     <file path="/ControllerUtils.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378458208876" ignored="false" />
-    <file path="/MessageDao.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378885833494" ignored="false" />
-    <file path="/MessageDaoHibernate.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378885916955" ignored="false" />
+    <file path="/MessageDao.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378979861604" ignored="false" />
+    <file path="/MessageDaoHibernate.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378980480566" ignored="false" />
     <file path="/import.sql" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378869160189" ignored="false" />
     <file path="/SendMessageForm.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378457268012" ignored="false" />
     <file path="/MessageFormValidator.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378193133656" ignored="false" />
@@ -37,7 +37,7 @@
     <file path="$PROJECT_DIR$/../../n-exchange/n-exchange/pom.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378271280230" ignored="false" />
     <file path="/simple-forum.conf" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378278204377" ignored="false" />
     <file path="/formValidate.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378723925563" ignored="false" />
-    <file path="/fragment.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378882675648" ignored="false" />
+    <file path="/fragment.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378981917494" ignored="false" />
     <file path="/DaoTest.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378696506007" ignored="false" />
     <file path="$USER_HOME$/.m2/settings.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378348876797" ignored="false" />
     <file path="/application-context.xml" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378349193050" ignored="false" />
@@ -87,13 +87,13 @@
     <file path="/JacksonConversionServiceConfigurer.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378708196887" ignored="false" />
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/java/ipastushenko/training/json/ConversionServiceAwareObjectMapper.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
     <file path="/ConversionServiceAwareObjectMapper.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378709003240" ignored="false" />
-    <file path="/singlepage.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378807009454" ignored="false" />
+    <file path="/singlepage.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378979103386" ignored="false" />
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/java/ipastushenko/training/json/ConvertingDeserializer.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/webapp/WEB-INF/views/welcome.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/java/ipastushenko/training/json/FormatAnnotationIntrospector.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/java/ipastushenko/training/json/ConvertingSerializer.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
-    <file path="/main.css" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378802076157" ignored="false" />
-    <file path="/main.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378889143698" ignored="false" />
+    <file path="/main.css" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378978293168" ignored="false" />
+    <file path="/main.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378981737051" ignored="false" />
     <file path="/JsonPageTitles.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378878821297" ignored="false" />
     <file path="/JsonGetData.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378879467026" ignored="false" />
     <file path="/elements.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378882688946" ignored="false" />
@@ -162,7 +162,16 @@
       <file leaf-file-name="TitlesController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/TitlesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="12" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0">
+            <state line="76" column="97" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageEntity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="35" selection-start="697" selection-end="708" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -171,7 +180,16 @@
       <file leaf-file-name="MessagesController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="27" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.0">
+            <state line="61" column="16" selection-start="2343" selection-end="2343" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="import.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/local/import.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="76" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -180,7 +198,7 @@
       <file leaf-file-name="MessageDao.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/MessageDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="100" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.0">
+            <state line="29" column="71" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -189,43 +207,7 @@
       <file leaf-file-name="TitleDao.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/TitleDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="69" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOException.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/DAOException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TitleDaoHibernate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="76" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonPage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="15" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageDaoHibernate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="70" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
+            <state line="44" column="77" selection-start="1077" selection-end="1150" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -234,8 +216,34 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="12" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.10677618">
+            <state line="197" column="8" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.8932238">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TitleDaoHibernate.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="51" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#3266#3577#0" expanded="true" />
+                <element signature="e#3558#3559#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageDaoHibernate.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="38" selection-start="3603" selection-end="3603" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2822#3214#0" expanded="true" />
+                <element signature="e#3199#3200#0" expanded="true" />
+                <element signature="e#3665#3960#0" expanded="true" />
+                <element signature="e#3945#3946#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -243,7 +251,7 @@
       <file leaf-file-name="TitleEntity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/TitleEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="19" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
+            <state line="48" column="34" selection-start="1097" selection-end="1111" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -259,21 +267,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/singlepage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/local/import.sql" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonPageTitles.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonGetData.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/elements.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/TitleEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonPage.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/singlepage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/MessageDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/TitleDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonPage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/local/import.sql" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/TitlesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" />
       </list>
     </option>
@@ -382,7 +390,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -584,86 +591,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleForum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simpleforum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleForum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simpleforum" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -891,6 +818,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sevenbits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1026,6 +983,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1041,13 +999,16 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="it.sevenbits.dao" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/local" />
@@ -1055,9 +1016,6 @@
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/test/resources/tests" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/js" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="it.sevenbits.dao" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.Unnamed">
@@ -1203,19 +1161,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1241,6 +1186,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1347,21 +1305,21 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274918" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39956093" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39956093" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3263965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20651014" sideWeight="0.6004391" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20864461" sideWeight="0.6004391" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6004391" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.6520343" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3274918" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3263965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1431,33 +1389,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/ControllerUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/local/hibernate.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="10" column="13" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/local/import.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="81" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="27" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1468,79 +1410,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/forms/SendMessageForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="52" selection-start="1888" selection-end="1888" vertical-scroll-proportion="0.0">
+        <state line="11" column="13" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/TitleEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="19" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
+        <state line="49" column="31" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/singlepage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="19" selection-start="4159" selection-end="4174" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/MessageDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="100" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/DAOException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="70" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="15" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="27" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.0">
+        <state line="29" column="71" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/TitleDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="69" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.0">
+        <state line="44" column="77" selection-start="1077" selection-end="1150" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/MessageEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="76" selection-start="2282" selection-end="2282" vertical-scroll-proportion="0.0">
+        <state line="26" column="35" selection-start="697" selection-end="708" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="16" selection-start="2343" selection-end="2343" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/entity/hibernate/TitleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="34" selection-start="1097" selection-end="1111" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/local/import.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="76" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/TitlesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="12" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0">
+        <state line="76" column="97" selection-start="2620" selection-end="2620" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/TitleDaoHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="51" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#3266#3577#0" expanded="true" />
+            <element signature="e#3558#3559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/it/sevenbits/dao/hibernate/MessageDaoHibernate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="38" selection-start="3603" selection-end="3603" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2822#3214#0" expanded="true" />
+            <element signature="e#3199#3200#0" expanded="true" />
+            <element signature="e#3665#3960#0" expanded="true" />
+            <element signature="e#3945#3946#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="12" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.10677618">
+        <state line="197" column="8" selection-start="6624" selection-end="6624" vertical-scroll-proportion="0.8932238">
           <folding />
         </state>
       </provider>

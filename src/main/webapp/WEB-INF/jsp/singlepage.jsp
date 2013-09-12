@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,14 +27,19 @@
             <a href="#modalCreateTopic" class="btn btn-large btn-block" data-toggle="modal">Create topic</a>
         </div>
         <div id="labelTopicName" class="deleted">
-            <div class="span7 divtopic"><p class="text-center topic">Topic Name</p></div>
-            <div class="span1 divtopic"><p class="text-center topic"><a href='<c:url value="/"/>'>delete</a></p></div>
+            <div class="span8 divtopic"><p id="topicName" class="text-center topic"></p></div>
+            <!--<div id="deleteTopicOnMessages" class="span1 divtopic"></div>-->
         </div>
     </div>
     <div class="row">
         <div id="sendMessageBox" class="hidden">
-            <div class="span11"><textarea class="fullwidth" rows="2"></textarea></div>
-            <div class="span1"><button class="btn btn-block messagesBox" type="submit">Send</button></div>
+            <div class="span11">
+                <form id="textMessageForm">
+                    <input id="titleIdMessageForm" type="hidden" name="titleId" value=""/>
+                    <textarea id="textMessage" class="form-control fullwidth" rows="2"></textarea>
+                </form>
+            </div>
+            <div class="span1"><button id="btnSendMessage" class="btn btn-block messagesBox" type="submit">Send</button></div>
         </div>
         <div id="errorMessageBox" class="deleted">
             <div class="span12"><span id="errorMessage" class="label label-important messagesBox fullwidth">Important</span></div>
@@ -42,8 +48,8 @@
             <table class="table nullheight">
                 <thead>
                     <tr>
-                        <th class="span3"><p class="text-center"><a href='<c:url value="/"/>'>Creation date</a></p></th>
-                        <th class="span3"><p class="text-center"><a href='<c:url value="/"/>'>Last update date</a></p></th>
+                        <th class="span3"><p class="text-center"><a id="creationDateSort" href='#'>Creation date</a></p></th>
+                        <th class="span3"><p class="text-center"><a id="lastUpdateDateSort" href='#'>Last update date</a></p></th>
                         <th class="span5"><p class="text-center">Topic name</p></th>
                         <th class="span1"></th>
                     </tr>
@@ -54,7 +60,7 @@
             <table class="table nullheight">
                 <thead>
                     <tr>
-                        <th class="span3"><p class="text-center"><a href='<c:url value="/"/>'>Creation date</a></p></th>
+                        <th class="span3"><p class="text-center">Creation date</p></th>
                         <th class="span8"><p class="text-center">Text message</p></th>
                         <th class="span1"></th>
                     </tr>
@@ -69,17 +75,7 @@
         </div>
         <div id="tableMessageBody" class="scrolldiv span12 deleted">
             <table class="table table-hover table-striped">
-            <tbody>
-                <tr>
-                    <td class="span3"><p class="text-center">01.01.2000</p></td>
-                    <td class="span8"><a href='<c:url value="/"/>'>Hello</a></td>
-                    <td class="span1"><p class="text-center"><a href='<c:url value="/"/>'>delete</a></p></td>
-                </tr>
-                <tr>
-                    <td><p class="text-center">02.01.2000</p></td>
-                    <td><a href='<c:url value="/"/>'>Hello2</a></td>
-                    <td><p class="text-center"><a href='<c:url value="/"/>'>delete</a></p></td>
-                </tr>
+            <tbody id="messageBody">
             </tbody>
             </table>
         </div>
@@ -89,10 +85,10 @@
             <a href='<c:url value="/"/>'>Home</a>
         </div>
         <div class="span2">
-            <a href='<c:url value="/"/>'>Popular topic</a>
+            <a href='#'>Popular topic</a>
         </div>
         <div class="span2">
-            <a href='<c:url value="/"/>'>Last updated topic</a>
+            <a id="lastUpdateTopic" href='#'>Last updated topic</a>
         </div>
         <div class="span7">
             <p class="text-right">©2013, 7bits</p>

@@ -29,18 +29,20 @@ public interface TitleDao {
     void delete(final TitleEntity titleEntity) throws DAOException;
 
     /**
-     * get all titles
-     * @return list of titles
-     */
-    List<TitleEntity> findAll();
-
-    /**
      * get titles by limit
      * @param limit limit
      * @param offset offset
      * @return list of titles
      */
     List<TitleEntity> findByLimitByOrder(final Long limit, final Long offset, final String order);
+
+    /**
+     * get titles by date by order
+     * @param date date
+     * @param order order
+     * @return list titles
+     */
+    List<TitleEntity> findByDateByOrder(final Long date, final String order);
 
     /**
      * get title by id

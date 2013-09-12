@@ -79,16 +79,17 @@ public class TitleDaoHibernate implements TitleDao {
         );
     }
 
-    @Override
-    public List<TitleEntity> findAll() {
+    public List<TitleEntity> findByDateByOrder(final Long date, final String order) {
         final DetachedCriteria criteria = DetachedCriteria.forClass(TitleEntity.class);
+        criteria.addOrder(Order.desc(order));
+        criteria.add(Restrictions.eq(order, date));
         return hibernateTemplate.execute(
-            new HibernateCallback<List<TitleEntity>>() {
-                @Override
-                public List<TitleEntity> doInHibernate(Session session) throws HibernateException, SQLException {
-                    return criteria.getExecutableCriteria(session).add(Restrictions.le("id", new Long(5))).list();
+                new HibernateCallback<List<TitleEntity>>() {
+                    @Override
+                    public List<TitleEntity> doInHibernate(Session session) throws HibernateException, SQLException {
+                        return criteria.getExecutableCriteria(session).list();
+                    }
                 }
-            }
         );
     }
 

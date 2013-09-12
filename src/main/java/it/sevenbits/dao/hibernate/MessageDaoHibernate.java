@@ -46,6 +46,7 @@ public class MessageDaoHibernate implements MessageDao {
             if (titleEntity != null)
             {
                 titleEntity.setLastUpdateDate((new Date()).getTime());
+                hibernateTemplate.saveOrUpdate(titleEntity);
                 MessageEntity messageEntity = new MessageEntity(titleEntity, message.getTextMessage());
                 hibernateTemplate.saveOrUpdate(messageEntity);
             }
@@ -67,25 +68,11 @@ public class MessageDaoHibernate implements MessageDao {
     }
 
     @Override
-    public List<MessageEntity> findByTitleId(final Long titleId) {
-        final DetachedCriteria criteria = DetachedCriteria.forClass(MessageEntity.class);
-        criteria.add(Property.forName("titleId").eq(titleId));
-        return hibernateTemplate.execute(
-            new HibernateCallback<List<MessageEntity>>() {
-                @Override
-                public List<MessageEntity> doInHibernate(Session session) throws HibernateException, SQLException {
-                    return criteria.getExecutableCriteria(session).list();
-                }
-            }
-        );
-    }
-
-    @Override
     public List<MessageEntity> findByTitleIdByLimitByOrder(
             final Long titleId, final Long limit, final Long offset, final String order
     ) {
         final DetachedCriteria criteria = DetachedCriteria.forClass(MessageEntity.class);
-        criteria.add(Property.forName("titleId").eq(titleId));
+        criteria.add(Restrictions.eq("titleEntity.id", titleId));
         criteria.addOrder(Order.desc(order));
         return hibernateTemplate.execute(
             new HibernateCallback<List<MessageEntity>>() {
@@ -98,11 +85,21 @@ public class MessageDaoHibernate implements MessageDao {
         );
     }
 
-    /*@Override
-    public List<TitleEntity> findByTitleIdByLimit(Long titleId, Long limit, Long offset) {
-        return hibernateTemplate.findByNamedQueryAndNamedParam("findMessagesByTitleByLimitAndOffset",
-                new String[] {"titleId", "limit", "offset"}, new Object[] {titleId, limit, offset});
-    } */
+    @Override
+    public List<MessageEntity> findByTitleIdByDate(final Long titleId, final Long date, final String order) {
+        final DetachedCriteria criteria = DetachedCriteria.forClass(MessageEntity.class);
+        criteria.add(Restrictions.eq("titleEntity.id", titleId));
+        criteria.add(Restrictions.eq(order, date));
+        criteria.addOrder(Order.desc(order));
+        return hibernateTemplate.execute(
+            new HibernateCallback<List<MessageEntity>>() {
+                @Override
+                public List<MessageEntity> doInHibernate(Session session) throws HibernateException, SQLException {
+                    return criteria.getExecutableCriteria(session).list();
+                }
+            }
+        );
+    }
 
     public MessageEntity findById(final Long id) {
         return hibernateTemplate.get(MessageEntity.class, id);
