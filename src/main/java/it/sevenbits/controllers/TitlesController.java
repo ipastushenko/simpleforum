@@ -40,6 +40,12 @@ public class TitlesController {
         return "singlepage";
     }
 
+    @RequestMapping(value = "/backbonedev", method = RequestMethod.GET)
+    public String viewBackboneDevPage(Model model) {
+        model.addAttribute("countElements", ControllerUtils.getCountRow(TitlesController.class));
+        return "backbonedev";
+    }
+
     @RequestMapping(value = "/json/titles/{date:\\d+}/{count:\\d+}/{order:\\d+}", method = RequestMethod.GET)
     public @ResponseBody JsonBase getListTitles(
             @PathVariable final Long date, @PathVariable final Long count, @PathVariable final Long order
@@ -88,21 +94,16 @@ public class TitlesController {
         for (int i = countEndDate; i < listTitleEndDateEntities.size(); ++i)
             listTitleEntities.add(listTitleEndDateEntities.get(i));
 
-        long time = 0;
-        if (listTitleEntities.size() <= count.intValue() + countEndDate - 1)
-            time = -1;
         if (!listTitleEntities.isEmpty())
         {
             if (order == 0) {
-                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getCreateDate() + time;
+                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getCreateDate() - 1;
             }
             else {
-                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getLastUpdateDate() + time;
+                endDate = listTitleEntities.get(listTitleEntities.size() - 1).getLastUpdateDate() - 1;
             }
         }
-        else {
-            endDate = (long)0;
-        }
+
         return new JsonPage<TitleEntity>(endDate, listTitleEntities);
     }
 

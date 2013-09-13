@@ -11,6 +11,9 @@
     <script type="text/javascript" src='<c:url value="/resources/js/libs/jquery-1.10.2.min.js"/>'  language="javascript"> </script>
     <script type="text/javascript" src='<c:url value="/resources/js/libs/json.min.js"/>'  language="javascript"> </script>
     <script type="text/javascript" src='<c:url value="/resources/libs/bootstrap/js/bootstrap.min.js"/>' language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/js/utils.js"/>'  language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/js/topic.js"/>'  language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/js/message.js"/>'  language="javascript"> </script>
     <script type="text/javascript" src='<c:url value="/resources/js/main.js"/>'  language="javascript"> </script>
 </head>
 <body>
@@ -67,13 +70,13 @@
                 </thead>
             </table>
         </div>
-        <div id="tableTopicBody" class="scrolldiv span12">
+        <div id="tableTopicBody" onscroll='scrollTopic("/SimpleForum/", this)' class="scrolldiv span12">
             <table class="table table-hover table-striped">
             <tbody id="topicBody">
             </tbody>
             </table>
         </div>
-        <div id="tableMessageBody" class="scrolldiv span12 deleted">
+        <div id="tableMessageBody" onscroll='scrollMessage("/SimpleForum/", this)' class="scrolldiv span12 deleted">
             <table class="table table-hover table-striped">
             <tbody id="messageBody">
             </tbody>

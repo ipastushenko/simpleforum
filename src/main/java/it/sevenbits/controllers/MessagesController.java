@@ -53,8 +53,9 @@ public class MessagesController {
         );
 
         Long endDate = beginDate;
-        if (!listMessageEntities.isEmpty())
+        if (!listMessageEntities.isEmpty()) {
             endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate();
+        }
         List<MessageEntity> listMessageEndDateEntities = messageDao.findByTitleIdByDate(titleId, endDate, currentOrder);
         int countEndDate = 1;
         for (int i = listMessageEntities.size() - 1; i > 0; --i)
@@ -64,15 +65,9 @@ public class MessagesController {
         for (int i = countEndDate; i < listMessageEndDateEntities.size(); ++i)
             listMessageEntities.add(listMessageEndDateEntities.get(i));
 
-        long time = 0;
-        if (listMessageEntities.size() <= count)
-            time = -1;
         if (!listMessageEntities.isEmpty())
         {
-            endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate() + time;
-        }
-        else {
-            endDate = (long)0;
+            endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate() - 1;
         }
 
         return new JsonPage<MessageEntity>(endDate, listMessageEntities);
