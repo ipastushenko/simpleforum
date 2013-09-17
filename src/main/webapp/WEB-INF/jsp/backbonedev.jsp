@@ -11,10 +11,21 @@
     <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/json2.js"/>' language="javascript"> </script>
     <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/underscore.js"/>' language="javascript"> </script>
     <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/backbone.js"/>' language="javascript"> </script>
-    <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/main.js"/>' language="javascript"> </script>
-<title>Development frontend SPA with Backbone</title>
+
+    <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/view.js"/>' language="javascript"> </script>
+    <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/controller.js"/>' language="javascript"> </script>
+
+    <title>Development frontend SPA with Backbone</title>
 </head>
 <body>
-Development frontend SPA with Backbone
+<script type="text/template" id="topic_template">
+  <p>Topics</p>
+  <input type="button" id="to_messages_button" value="To Messages" />
+</script>
+<script type="text/template" id="message_template">
+  <p>Messages</p>
+</script>
+<div id="container" class="container">
+</div>
 </body>
 </html>
