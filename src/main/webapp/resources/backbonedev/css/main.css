@@ -1,4 +1,36 @@
-#error, #success
-{
-    display: none;
+.scroll-div {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.null-height {
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.full-width {
+    width: 100%
+}
+
+.text-box {
+    height: 50px
+}
+
+.topic {
+    margin: 10px;
+}
+
+.message-box {
+    height: 50px
+}
+
+.div-topic {
+    height: 40px;
+    margin: 10px;
+}
+
+.margin-top {
+    margin-top: 10px;
 }

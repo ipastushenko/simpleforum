@@ -36,12 +36,13 @@
     </div>
     <div class="row">
         <div id="sendMessageBox" class="hidden">
-            <div class="span11">
+
                 <form id="textMessageForm">
-                    <input id="titleIdMessageForm" type="hidden" name="titleId" value=""/>
-                    <textarea id="textMessage" class="form-control fullwidth" rows="2"></textarea>
+                    <div class="span11">
+                        <input id="titleIdMessageForm" type="hidden" name="titleId" value=""/>
+                        <textarea id="textMessage" class="form-control fullwidth" rows="2"></textarea>
+                    </div>
                 </form>
-            </div>
             <div class="span1"><button id="btnSendMessage" class="btn btn-block messagesBox" type="submit">Send</button></div>
         </div>
         <div id="errorMessageBox" class="deleted">

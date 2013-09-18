@@ -74,7 +74,7 @@ public class MessagesController {
     }
 
     @RequestMapping(value = "/json/messages", method = RequestMethod.POST)
-    public @ResponseBody JsonBase addNewMessage(@RequestBody final SendMessageForm sendMessageForm, final HttpServletResponse result) {
+    public @ResponseBody JsonBase addNewMessage( @RequestBody final SendMessageForm sendMessageForm,final HttpServletResponse result) {
         JsonBase jsonModel = null;
         List<String> listErrors = null;
         Long titleId = sendMessageForm.getTitleId();

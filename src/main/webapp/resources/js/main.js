@@ -122,38 +122,3 @@ function scrollMessage(url, objectScroll) {
         appendMessages(url, titleId ,currentCountElements);
     }
 }
-
-$(document).ready(function() {
-    $('#btnCreateNewTopic').click(function() {
-        clickCreateNewTopic(url);
-    });
-
-    $('#closeCreateTopic').click(function() {
-        $('#errorCreateTopic').slideUp(0);
-    });
-
-    $('#btnSendMessage').click(function() {
-        clickCreateNewMessage(url);
-    });
-
-    $('#creationDateSort').click(function() {
-        orderTitles = 0;
-        updateTopics(url, currentCountElements, orderTitles);
-    });
-
-    $('#lastUpdateDateSort').click(function() {
-        orderTitles = 1;
-        updateTopics(url, currentCountElements, orderTitles);
-    });
-
-    $('#lastUpdateTopic').click(function() {
-        $('#sendMessageBox').css('visibility', 'hidden');
-        swap($('#tableMessagesHead'), $('#tableTopicHead'));
-        swap($('#tableMessageBody'), $('#tableTopicBody'));
-        swap($('#labelTopicName'), $('#buttonCreateTopic'));
-        orderTitles = 1;
-        updateTopics(url, currentCountElements, orderTitles);
-    });
-
-    updateTopics(url, currentCountElements, orderTitles);
-});
