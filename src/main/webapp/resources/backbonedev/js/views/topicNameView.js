@@ -1,5 +1,5 @@
 var TopicNameView = Backbone.View.extend({
-    el: $('#topic-name'),
+    el: $('.js-topic-name'),
 
     initialize: function () {
         appState.bind('change', this.render, this);
@@ -14,7 +14,7 @@ var TopicNameView = Backbone.View.extend({
     render: function() {
         var state = appState.get("state");
         this.$el.html(this.templates[state](appState.toJSON()));
-        this.$('#topic-name-text').html(appState.get("titleId"));
+        $('.js-topic-name-text').html(appState.get("titleId"));
         return this;
     }
 });

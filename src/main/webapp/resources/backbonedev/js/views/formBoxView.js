@@ -1,5 +1,5 @@
 var FormBoxView = Backbone.View.extend({
-    el: $('#form-box'),
+    el: $('.js-form-box'),
 
     initialize: function () {
         appState.bind('change', this.render, this);
@@ -17,15 +17,15 @@ var FormBoxView = Backbone.View.extend({
         return this;
     },
     events: {
-        "click #send-message-btn": "send",
-        "click #create-topic-btn": "create"
+        "click .js-send-message-btn": "send",
+        "click .js-create-topic-btn": "create"
     },
     send: function() {
-
+        clickCreateNewMessage(url, this.$('.js-message-form'))
         return false;
     },
     create: function() {
-        controller.navigate("messages/1", true);
+        clickCreateNewTopic(url, this.$('.js-topic-form'))
         return false;
     }
 });

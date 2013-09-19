@@ -16,34 +16,34 @@
         <div class="span4">
             <h1>SimpleForum</h1>
         </div>
-        <div id="topic-name" class="span8 div-topic">
+        <div class="span8 div-topic js-topic-name">
         </div>
     </div>
     <div class="row">
-        <div id="form-box">
+        <div class="js-form-box">
         </div>
         <div class="span12">
             <table class="table null-height">
-                <thead id="table-head">
+                <thead class="js-table-head">
                 </thead>
             </table>
         </div>
-        <div id="table-body-container" class="scroll-div span12">
+        <div class="scroll-div span12 js-table-body-container">
             <table class="table table-hover table-striped">
-            <tbody id="table-body">
+            <tbody class="js-table-body">
             </tbody>
             </table>
         </div>
     </div>
     <div class="row">
         <div class="span1">
-            <a href='<c:url value="/SimpleForum/backbonedev"/>'>Home</a>
+            <a href='<c:url value="/backbonedev"/>'>Home</a>
         </div>
         <div class="span2">
             <a href='#'>Popular topic</a>
         </div>
         <div class="span2">
-            <a id="last-update-topic" href='#'>Last updated topic</a>
+            <a class="js-last-update-topic" href='#'>Last updated topic</a>
         </div>
         <div class="span7">
             <p class="text-right">©2013, 7bits</p>
@@ -55,30 +55,29 @@
 
 <!-- topic name -->
 <script type="text/template" id="show-topic-name">
-    <p id="topic-name-text" class="text-center topic">Temp</p>
+    <p class="text-center topic js-topic-name-text">Temp</p>
 </script>
 <script type="text/template" id="hide-topic-name">
 </script>
 
 <!-- form box -->
 <script type="text/template" id="topic-form-box">
-    <form id="topic-form">
+    <form class="js-topic-form">
         <div class="span10">
-            <textarea id="new-topic-name" class="form-control full-width" rows="2" />
+            <textarea class="form-control full-width js-new-topic-name" rows="2" />
         </div>
         <div class="span2">
-            <input id="create-topic-btn" class="btn btn-block message-box" type="submit" value="Create topic" />
+            <input class="btn btn-block message-box js-create-topic-btn" type="submit" value="Create topic" />
         </div>
     </form>
 </script>
 <script type="text/template" id="message-form-box">
-    <form id="message-form">
+    <form class="js-message-form">
         <div class="span10">
-            <input id="id-title-message-form" type="hidden" name="titleId" value=""/>
-            <textarea id="message-text" class="form-control full-width" rows="2" />
+            <textarea class="form-control full-width js-message-text" rows="2" />
         </div>
         <div class="span2">
-            <input id="send-message-btn" class="btn btn-block message-box" type="submit" value="Send message" />
+            <input class="btn btn-block message-box js-send-message-btn" type="submit" value="Send message" />
         </div>
     </form>
 </script>

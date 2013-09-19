@@ -1,20 +1,32 @@
 var TableBodyView = Backbone.View.extend({
-    el: $('#table-body-container'),
+    el: $('.js-table-body-container'),
 
     initialize: function () {
         appState.bind('change', this.render, this);
         this.render();
     },
 
-    /*templates: {
-        "topics": _.template($('#topic-table-body').html()),
-        "messages": _.template($('#message-table-body').html())
-    },*/
+    events : {
+        "scroll" : "detect_scroll"
+    },
 
     render: function() {
-        /*var state = appState.get("state");
-        this.$el.html(this.templates[state](appState.toJSON()));*/
+        if (appState.get("state") == 'topics') {
+            updateTopics(url, this.$('.js-table-body'), currentCountElements, orderTitles);
+        }
+        else {
+            updateMessages(url, this.$('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
+        }
         return this;
+    },
+
+    detect_scroll: function() {
+         if (appState.get("state") == 'topics') {
+             scrollTopic(url, this.$el);
+         }
+         else {
+             scrollMessage(url, this.$el);
+         }
     }
 });
 

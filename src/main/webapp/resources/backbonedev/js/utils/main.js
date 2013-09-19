@@ -41,15 +41,10 @@ function appendMessages(url, tbody, titleId, currentCountElements) {
     });
 }
 
-function toMessages(url, name, id) {
-    controller.navigate("messages/" + id, true);
-    updateMessages(url, id, currentCountElements);
-}
-
 function deleteTopic(url, id) {
     $.getJSON(url + 'json/removeTitle/' + id, {}, function(data) {
         if (data.success) {
-            updateTopics(url, currentCountElements, orderTitles);
+            updateTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
         }
         else {
             alert('incorrect get');
@@ -60,8 +55,7 @@ function deleteTopic(url, id) {
 function deleteMessage(url, id) {
     $.getJSON(url + 'json/removeMessage/' + id, {}, function(data) {
         if (data.success) {
-            var titleId = parseInt($('#titleIdMessageForm').val());
-            updateMessages(url, titleId, currentCountElements);
+            updateMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
         }
         else {
             alert('incorrect get');
@@ -71,12 +65,11 @@ function deleteMessage(url, id) {
 
 function clickCreateNewMessage(url, form) {
     currentDate = 0;
-    var textSerializable = form.serializeObject();
+    var textSerializable = {'titleId': parseInt(appState.get("titleId")), 'textMessage' : $('.js-message-text').val()};
     $.postJSON(url+'json/messages', textSerializable, function(data) {
         if (data.success){
-            var titleId = parseInt(appState.get("titleId"));
-            updateMessages(url, titleId, currentCountElements);
-            //$('#textMessage').val('');
+            $('.js-message-text').val('');
+            updateMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
         }
         else {
             var error = "Error: " + data.errors[0];
@@ -87,64 +80,29 @@ function clickCreateNewMessage(url, form) {
 
 function clickCreateNewTopic(url, form) {
     currentDate = 0;
-        var textSerializable = form.serializeObject();
-        $.postJSON(url+'json/titles', textSerializable, function(data) {
-            if (data.success){
-                var titleId = parseInt(appState.get("titleId"));
-                updateTopics(url, titleId, currentCountElements);
-                //$('#textMessage').val('');
-            }
-            else {
-                var error = "Error: " + data.errors[0];
-                alert(error);
-            }
-        });
+    var textSerializable = {'name' : $('.js-new-topic-name').val()};
+    $.postJSON(url+'json/titles', textSerializable, function(data) {
+        if (data.success){
+            $('.js-new-topic-name').val('');
+            updateTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
+        }
+        else {
+            var error = "Error: " + data.errors[0];
+            alert(error);
+        }
+    });
 }
 
 function scrollTopic(url, objectScroll) {
-    if ((objectScroll.scrollTop + objectScroll.clientHeight) / objectScroll.scrollHeight > 0.9) {
-        appendTopics(url, currentCountElements, orderTitles);
+    if ((objectScroll[0].scrollTop + objectScroll[0].clientHeight) / objectScroll[0].scrollHeight > 0.95) {
+        appendTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
     }
 }
 
 function scrollMessage(url, objectScroll) {
-    if ((objectScroll.scrollTop + objectScroll.clientHeight) / objectScroll.scrollHeight > 0.9) {
-        var titleId = parseInt($('#titleIdMessageForm').val());
-        appendMessages(url, titleId ,currentCountElements);
+    if ((objectScroll[0].scrollTop + objectScroll[0].clientHeight) / objectScroll[0].scrollHeight > 0.95) {
+        appendMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
     }
 }
 
-$(document).ready(function() {
-    $('#btnCreateNewTopic').click(function() {
-        clickCreateNewTopic(url);
-    });
 
-    $('#closeCreateTopic').click(function() {
-        $('#errorCreateTopic').slideUp(0);
-    });
-
-    $('#btnSendMessage').click(function() {
-        clickCreateNewMessage(url);
-    });
-
-    $('#creationDateSort').click(function() {
-        orderTitles = 0;
-        updateTopics(url, currentCountElements, orderTitles);
-    });
-
-    $('#lastUpdateDateSort').click(function() {
-        orderTitles = 1;
-        updateTopics(url, currentCountElements, orderTitles);
-    });
-
-    $('#lastUpdateTopic').click(function() {
-        $('#sendMessageBox').css('visibility', 'hidden');
-        swap($('#tableMessagesHead'), $('#tableTopicHead'));
-        swap($('#tableMessageBody'), $('#tableTopicBody'));
-        swap($('#labelTopicName'), $('#buttonCreateTopic'));
-        orderTitles = 1;
-        updateTopics(url, currentCountElements, orderTitles);
-    });
-
-    updateTopics(url, currentCountElements, orderTitles);
-});

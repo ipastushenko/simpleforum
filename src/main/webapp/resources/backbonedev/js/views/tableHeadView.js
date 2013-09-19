@@ -1,5 +1,5 @@
 var TableHeadView = Backbone.View.extend({
-    el: $('#table-head'),
+    el: $('.js-table-head'),
 
     initialize: function () {
         appState.bind('change', this.render, this);

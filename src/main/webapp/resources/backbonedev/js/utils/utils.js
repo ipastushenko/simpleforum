@@ -1,3 +1,3 @@
 function prefixUrl() {
-    return "/SimpleForum/"
+    return "/SimpleForum/";
 }
