@@ -1,6 +1,6 @@
 var orderTitles = 0;
 var currentDate = 0;
-var currentCountElements = 7;
+var currentCountElements = 10;
 var url = prefixUrl();
 
 function updateTopics(url, tbody, currentCountElements, orderTitles) {

@@ -99,14 +99,14 @@
     <file path="/elements.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378882688946" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/elements.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378882694647" ignored="false" />
     <file path="/topic.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379909319699" ignored="false" />
-    <file path="/backbonedev.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379918496935" ignored="false" />
+    <file path="/backbonedev.jsp" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379925774925" ignored="false" />
     <file path="/view.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379478362504" ignored="false" />
     <file path="/model.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379490819880" ignored="false" />
     <file path="/formBoxView.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379581422815" ignored="false" />
     <file path="/tableHeadView.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379482239277" ignored="false" />
     <file path="/tableBodyView.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379908544350" ignored="false" />
     <file path="/utils.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379559176352" ignored="false" />
-    <file path="/controller.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379569615498" ignored="false" />
+    <file path="/controller.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379926086739" ignored="false" />
     <file path="/topicNameView.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379581061136" ignored="false" />
     <file path="/JsonMessagePage.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379909749910" ignored="false" />
     <file path="/message.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379923379162" ignored="false" />
@@ -171,19 +171,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="backbonedev.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="10" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.7263682">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="17" selection-start="2962" selection-end="2962" vertical-scroll-proportion="0.0">
+            <state line="98" column="5" selection-start="3011" selection-end="3203" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,7 +183,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="320" column="19" selection-start="5206" selection-end="5206" vertical-scroll-proportion="-21.592592">
+            <state line="317" column="1" selection-start="5176" selection-end="5176" vertical-scroll-proportion="-19.37037">
               <folding />
             </state>
           </provider>
@@ -207,17 +198,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="include.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formBoxView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js">
+      <file leaf-file-name="tableHeadView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableHeadView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -225,10 +207,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js">
+      <file leaf-file-name="topicNameView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/topicNameView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="9" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+            <state line="15" column="64" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tableBodyView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="5" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -237,7 +228,25 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="282" column="14" selection-start="4146" selection-end="4146" vertical-scroll-proportion="-8.518518">
+            <state line="282" column="14" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="8" selection-start="650" selection-end="650" vertical-scroll-proportion="0.5390625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -262,22 +271,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/TitleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/dao/MessageDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/models/model.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/jsonmodels/JsonMessagePage.java" />
         <option value="$PROJECT_DIR$/src/main/java/it/sevenbits/controllers/MessagesController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/topicNameView.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/topic.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/message.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js" />
       </list>
     </option>
   </component>
@@ -544,7 +553,185 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbonedev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbonedev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbonedev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbonedev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimpleForum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backbonedev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1062,72 +1249,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/topicNameView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="64" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableHeadView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="17" selection-start="2962" selection-end="2962" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="14" selection-start="4146" selection-end="4146" vertical-scroll-proportion="-8.518518">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/topic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="19" selection-start="5206" selection-end="5206" vertical-scroll-proportion="-21.592592">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="16" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1141,7 +1265,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="10" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.7263682">
+        <state line="103" column="92" selection-start="4039" selection-end="4039" vertical-scroll-proportion="-15.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="317" column="1" selection-start="5176" selection-end="5176" vertical-scroll-proportion="-19.37037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="16" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/topic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="42" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableHeadView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/topicNameView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="64" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="282" column="14" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="5" selection-start="3011" selection-end="3203" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="8" selection-start="650" selection-end="650" vertical-scroll-proportion="0.5390625">
           <folding />
         </state>
       </provider>

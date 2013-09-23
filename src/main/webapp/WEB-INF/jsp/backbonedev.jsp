@@ -71,7 +71,7 @@
 
 <!-- table head -->
 <script type="text/template" id="topic-table-head">
-    <table class="table null-height table-head">
+    <table class="table-head table null-height">
         <thead>
             <tr>
                 <th class="span3">
@@ -101,6 +101,7 @@
 
 <!-- JS -->
 <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/jquery-1.10.2.js"/>' language="javascript"> </script>
+<script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/jquery.nicescroll.js"/>' language="javascript"> </script>
 <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/json2.js"/>' language="javascript"> </script>
 <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/underscore.js"/>' language="javascript"> </script>
 <script type="text/javascript" src='<c:url value="/resources/backbonedev/js/libs/backbone.js"/>' language="javascript"> </script>

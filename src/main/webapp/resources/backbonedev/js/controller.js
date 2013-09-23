@@ -15,3 +15,11 @@ var Controller = Backbone.Router.extend({
 
 var controller = new Controller();
 Backbone.history.start();
+
+$(function(){
+    $("html").niceScroll();
+    /*$(window).
+    if ((objectScroll[0].scrollTop + objectScroll[0].clientHeight) / objectScroll[0].scrollHeight > 0.95) {
+        appendTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
+    } */
+});
