@@ -31,25 +31,6 @@
             </table>
         </div>
     </div>
-    <div class="row footer-text arial">
-        <div class="span1 first-footer main-footer">
-            <p class="text-left full-width">
-                <a href='<c:url value="/backbonedev"/>'>
-                    <span class="footer-text arial underline-footer">Home</span>
-                </a>
-            </p>
-        </div>
-        <div class="span4 footer main-footer">
-            <p class="text-left full-width">
-                <a class="js-last-update-topic" href='#'>
-                    <span class="footer-text arial underline-footer">Last updated topic</span>
-                </a>
-            </p>
-        </div>
-        <div class="span7 end-footer main-footer">
-            <p class="text-right copyright">©2013, 7bits</p>
-        </div>
-    </div>
 </div>
 
 <!-- Templates -->
