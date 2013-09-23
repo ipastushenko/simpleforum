@@ -52,6 +52,11 @@ public class MessagesController {
                 titleId, count, beginDate, currentOrder
         );
 
+        String nameTitle = null;
+        TitleEntity titleEntity = titleDao.findById(titleId);
+        if (titleEntity != null)
+            nameTitle = titleEntity.getName();
+
         Long endDate = beginDate;
         if (!listMessageEntities.isEmpty()) {
             endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate();
@@ -70,7 +75,7 @@ public class MessagesController {
             endDate = listMessageEntities.get(listMessageEntities.size() - 1).getCreateDate() - 1;
         }
 
-        return new JsonPage<MessageEntity>(endDate, listMessageEntities);
+        return new JsonMessagePage<MessageEntity>(endDate, listMessageEntities, nameTitle);
     }
 
     @RequestMapping(value = "/json/messages", method = RequestMethod.POST)

@@ -14,39 +14,40 @@
 <div class="container">
     <div class="row">
         <div class="span4">
-            <h1>SimpleForum</h1>
-        </div>
-        <div class="span8 div-topic js-topic-name">
+            <p class="georgia italic logo">Simple Forum</p>
         </div>
     </div>
     <div class="row">
+        <div class="js-topic-name">
+        </div>
         <div class="js-form-box">
         </div>
-        <div class="span12">
-            <table class="table null-height">
-                <thead class="js-table-head">
-                </thead>
-            </table>
+        <div class="span12 js-table-head">
         </div>
-        <div class="scroll-div span12 js-table-body-container">
-            <table class="table table-hover table-striped">
+        <div class="table-body-container scroll-div span12 js-table-body-container">
+            <table class="table">
             <tbody class="js-table-body">
             </tbody>
             </table>
         </div>
     </div>
-    <div class="row">
-        <div class="span1">
-            <a href='<c:url value="/backbonedev"/>'>Home</a>
+    <div class="row footer-text arial">
+        <div class="span1 first-footer main-footer">
+            <p class="text-left full-width">
+                <a href='<c:url value="/backbonedev"/>'>
+                    <span class="footer-text arial underline-footer">Home</span>
+                </a>
+            </p>
         </div>
-        <div class="span2">
-            <a href='#'>Popular topic</a>
+        <div class="span4 footer main-footer">
+            <p class="text-left full-width">
+                <a class="js-last-update-topic" href='#'>
+                    <span class="footer-text arial underline-footer">Last updated topic</span>
+                </a>
+            </p>
         </div>
-        <div class="span2">
-            <a class="js-last-update-topic" href='#'>Last updated topic</a>
-        </div>
-        <div class="span7">
-            <p class="text-right">©2013, 7bits</p>
+        <div class="span7 end-footer main-footer">
+            <p class="text-right copyright">©2013, 7bits</p>
         </div>
     </div>
 </div>
@@ -55,7 +56,12 @@
 
 <!-- topic name -->
 <script type="text/template" id="show-topic-name">
-    <p class="text-center topic js-topic-name-text">Temp</p>
+    <div class="span10 first-footer color-topic-name">
+        <p class="topic-name arial js-topic-name-text"></p>
+    </div>
+    <div class="span2 end-footer color-topic-name">
+        <p class="span2 count-message arial bold-text js-count-messages"></p>
+    </div>
 </script>
 <script type="text/template" id="hide-topic-name">
 </script>
@@ -63,40 +69,53 @@
 <!-- form box -->
 <script type="text/template" id="topic-form-box">
     <form class="js-topic-form">
-        <div class="span10">
-            <textarea class="form-control full-width js-new-topic-name" rows="2" />
+        <div class="span9">
+            <input type=text placeholder="Enter topic name" maxlength="38" class="new-topic-name arial full-width js-new-topic-name"/>
         </div>
-        <div class="span2">
-            <input class="btn btn-block message-box js-create-topic-btn" type="submit" value="Create topic" />
+        <div class="span3 create-topic-btn">
+            <input class="btn-color create-topic-btn js-create-topic-btn georgia italic" type="submit" value="Create topic" />
         </div>
     </form>
 </script>
 <script type="text/template" id="message-form-box">
     <form class="js-message-form">
-        <div class="span10">
-            <textarea class="form-control full-width js-message-text" rows="2" />
+        <div class="span10 color-topic-name message">
+            <textarea placeholder="Enter message" class="arial form-control full-width message-text js-message-text" rows="3" />
         </div>
-        <div class="span2">
-            <input class="btn btn-block message-box js-send-message-btn" type="submit" value="Send message" />
+        <div class="span2 color-topic-name btn-send">
+            <input class="btn-color send-message-btn georgia italic js-send-message-btn" type="submit" value="Send" />
         </div>
     </form>
 </script>
 
 <!-- table head -->
 <script type="text/template" id="topic-table-head">
-    <tr>
-        <th class="span3"><p class="text-center"><a id="creation-date-sort" href='#'>Creation date</a></p></th>
-        <th class="span3"><p class="text-center"><a id="last-update-date-sort" href='#'>Last update date</a></p></th>
-        <th class="span5"><p class="text-center">Topic name</p></th>
-        <th class="span1"></th>
-    </tr>
+    <table class="table null-height table-head">
+        <thead>
+            <tr>
+                <th class="span3">
+                    <p class="text-center topic-head">
+                        <a id="creation-date-sort" href='#'>
+                            <span class="topic-head-text arial underline-head">Creation date</span>
+                            <img class="ref-image" src='<c:url value="/resources/backbonedev/img/ref_image_03.png"/>'>
+                        </a>
+                    </p>
+                </th>
+                <th class="span3">
+                    <p class="text-center topic-head">
+                        <a id="last-update-date-sort" href='#'>
+                            <span class="topic-head-text arial underline-head">Last update date</span>
+                            <img class="ref-image" src='<c:url value="/resources/backbonedev/img/ref_image_03.png"/>'>
+                        </a>
+                    </p>
+                </th>
+                <th class="span5"><p class="text-center topic-head-text arial">Topic name</p></th>
+                <th class="span1"></th>
+            </tr>
+        </thead>
+    </table>
 </script>
 <script type="text/template" id="message-table-head">
-    <tr>
-        <th class="span3"><p class="text-center">Creation date</p></th>
-        <th class="span8"><p class="text-center">Text message</p></th>
-        <th class="span1"></th>
-    </tr>
 </script>
 
 <!-- JS -->

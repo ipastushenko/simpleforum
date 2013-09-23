@@ -14,7 +14,6 @@ var TopicNameView = Backbone.View.extend({
     render: function() {
         var state = appState.get("state");
         this.$el.html(this.templates[state](appState.toJSON()));
-        $('.js-topic-name-text').html(appState.get("titleId"));
         return this;
     }
 });

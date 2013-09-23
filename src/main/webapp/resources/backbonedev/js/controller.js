@@ -2,7 +2,7 @@ var Controller = Backbone.Router.extend({
     routes: {
         "": "topics",
         "topics": "topics",
-        "messages/:titleId": "messages",
+        "messages/:titleId": "messages"
     },
 
     topics: function() {

@@ -17,14 +17,14 @@ public interface TitleDao {
     /**
      * add title
      * @param title title
-     * @throws DataAccessException if exception in database
+     * @throws DAOException if exception in database
      */
     void create(final Title title) throws DAOException;
 
     /**
      * delete title
      * @param titleEntity title
-     * @throws DataAccessException if no titleEntity in database
+     * @throws DAOException if no titleEntity in database
      */
     void delete(final TitleEntity titleEntity) throws DAOException;
 

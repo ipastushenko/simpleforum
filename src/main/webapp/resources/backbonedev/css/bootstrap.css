@@ -281,7 +281,6 @@ a:focus {
 
 [class*="span"] {
   float: left;
-  min-height: 1px;
   margin-left: 20px;
 }
 
@@ -646,10 +645,6 @@ a:focus {
 
 .container-fluid:after {
   clear: both;
-}
-
-p {
-  margin: 0 0 10px;
 }
 
 .lead {
@@ -1022,10 +1017,6 @@ pre code {
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll;
-}
-
-form {
-  margin: 0 0 20px;
 }
 
 fieldset {
@@ -2011,8 +2002,6 @@ table {
   padding: 8px;
   line-height: 20px;
   text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
 }
 
 .table th {

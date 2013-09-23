@@ -1,18 +1,37 @@
-function appendMessage(url, tbody, createtime, name, id) {
-    tbody.append('<tr>');
-    tbody.append('<td class="span3"><p class="text-center">'+ createtime + '</p></td>');
-    tbody.append('<td class="span8"><p class="text-left">' + name + '</p></td>');
-    tbody.append('<td class="span1"><p class="text-center"><button class="btn" onclick="deleteMessage(' + url + ',' + id +')">'+ 'delete' +'</button></p></td>');
-    tbody.append('</tr>');
+function appendMessage(url, tbody, createtime, name, id, end) {
+    tbody.append('<tr>' +
+                    '<td class="span12">' +
+                        '<p class="message-text-body">' +
+                            '<span class="arial text-tbody time-message">'+ createtime.toLocaleString() + '</span>' +
+                            '<span class="underline-message arial text-delete" onclick="deleteMessage(' + url + ',' + id +')">' + 'delete message' + '</span>' +
+                        '</p>' +
+                    '</td>' +
+                 '</tr>');
+    tbody.append('<tr>' +
+                    '<td class="span12 ' + end + '">' +
+                        '<p class="arial text-message">' + name + '</p>' +
+                    '</td>' +
+                 '</tr>');
 }
 
 function appendListMessages(url, data, tbody) {
-     for (var i in data.elements) {
-         appendMessage(url,
-                 tbody,
-                 new Date(data.elements[i].createDate),
-                 data.elements[i].textMessage,
-                 data.elements[i].id
-         );
-     }
+    $('.js-topic-name-text').html(data.nameTitle);
+    var message = 'message';
+    if (data.elements.length != 1) {
+        message = 'messages';
+    }
+    $('.js-count-messages').html(data.elements.length + ' ' + message);
+    var end = 'text-message-row';
+    for (var i in data.elements) {
+        if (i == data.elements.length - 1) {
+            end = '';
+        }
+     appendMessage(url,
+             tbody,
+             new Date(data.elements[i].createDate),
+             data.elements[i].textMessage,
+             data.elements[i].id,
+             end
+     );
+    }
 }
