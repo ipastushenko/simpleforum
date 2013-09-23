@@ -14,12 +14,19 @@ var Controller = Backbone.Router.extend({
 });
 
 var controller = new Controller();
+var sem = false;
 Backbone.history.start();
 
 $(function(){
-    $("html").niceScroll();
-    /*$(window).
-    if ((objectScroll[0].scrollTop + objectScroll[0].clientHeight) / objectScroll[0].scrollHeight > 0.95) {
-        appendTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
-    } */
+    var scroll = $("html").niceScroll();
+    $("html").niceScroll().scrollend(function(info) {
+        if (scroll.scrollvaluemax <= (scroll.scroll.y + 50)) {
+            if (appState.get("state") == "topics") {
+                appendTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
+            }
+            else {
+                appendMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
+            }
+        }
+    });
 });

@@ -59,7 +59,7 @@
     </form>
 </script>
 <script type="text/template" id="message-form-box">
-    <form class="js-message-form">
+    <form class="js-message-form form-messages">
         <div class="span10 color-topic-name message">
             <textarea placeholder="Enter message" class="arial form-control full-width message-text js-message-text" rows="3" />
         </div>

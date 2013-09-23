@@ -15,12 +15,15 @@ function appendMessage(url, tbody, createtime, name, id, end) {
 }
 
 function appendListMessages(url, data, tbody) {
+    currentCountMessages += data.elements.length;
+    if (data.nameTitle == null)
+        data.nameTitle = 'topic deleted';
     $('.js-topic-name-text').html(data.nameTitle);
     var message = 'message';
     if (data.elements.length != 1) {
         message = 'messages';
     }
-    $('.js-count-messages').html(data.elements.length + ' ' + message);
+    $('.js-count-messages').html(currentCountMessages + ' ' + message);
     var end = 'text-message-row';
     for (var i in data.elements) {
         if (i == data.elements.length - 1) {

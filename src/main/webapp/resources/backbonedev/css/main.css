@@ -74,6 +74,7 @@ input.send-message-btn {
 }
 
 .message {
+    margin-left: 0px;
     margin-top: 3px;
     padding: 18px 0px 10px 20px;
 }
@@ -81,7 +82,7 @@ input.send-message-btn {
 .btn-send {
     margin-left: 0px;
     margin-top: 3px;
-    padding: 18px 0px 49px 0px;
+    padding: 18px 0px 0px 0px;
 }
 
 input.new-topic-name {
@@ -315,4 +316,12 @@ span.underline-body:hover, span.underline-body:focus {
 
 .text-message-row {
     border-bottom: 1px solid #DDE1E1;
+}
+
+.form-messages {
+    display: table;
+    margin-left: 20px;
+    margin-top: 62px;
+    margin-bottom: 0px;
+    background-color: #FFFFFF;
 }

@@ -1,6 +1,7 @@
 var orderTitles = 0;
 var currentDate = 0;
 var currentCountElements = 10;
+var currentCountMessages = 0;
 var url = prefixUrl();
 
 function updateTopics(url, tbody, currentCountElements, orderTitles) {
@@ -23,6 +24,7 @@ function appendTopics(url, tbody, currentCountElements, orderTitles) {
 }
 
 function updateMessages(url, tbody, titleId, currentCountElements) {
+    currentCountMessages = 0;
     currentDate = 0;
     tbody.html('');
     appendMessages(url, tbody, titleId, currentCountElements);
