@@ -93,7 +93,7 @@
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/java/ipastushenko/training/json/FormatAnnotationIntrospector.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
     <file path="$PROJECT_DIR$/../java-training/mvc-ajax/src/main/java/ipastushenko/training/json/ConvertingSerializer.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378778548529" ignored="false" />
     <file path="/main.css" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1380007246534" ignored="false" />
-    <file path="/main.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379998309435" ignored="false" />
+    <file path="/main.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1380013584950" ignored="false" />
     <file path="/JsonPageTitles.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378878821297" ignored="false" />
     <file path="/JsonGetData.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378879467026" ignored="false" />
     <file path="/elements.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1378882688946" ignored="false" />
@@ -109,7 +109,7 @@
     <file path="/controller.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379996834147" ignored="false" />
     <file path="/topicNameView.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379581061136" ignored="false" />
     <file path="/JsonMessagePage.java" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1379909749910" ignored="false" />
-    <file path="/message.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1380007892496" ignored="false" />
+    <file path="/message.js" changelist="c6f43a7e-3bc5-46de-ab1d-d75f33325729" time="1380011945032" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,25 +174,16 @@
       <file leaf-file-name="backbonedev.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="22" selection-start="2167" selection-end="2167" vertical-scroll-proportion="-24.375">
+            <state line="63" column="22" selection-start="2167" selection-end="2167" vertical-scroll-proportion="-39.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="include.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="35" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
+            <state line="119" column="26" selection-start="3771" selection-end="3771" vertical-scroll-proportion="0.947245">
               <folding />
             </state>
           </provider>
@@ -207,10 +198,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css">
+      <file leaf-file-name="formBoxView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="339" column="20" selection-start="5493" selection-end="5493" vertical-scroll-proportion="0.0">
+            <state line="27" column="24" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -225,10 +216,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="message.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/message.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="64" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.58928573">
+            <state line="21" column="43" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -275,12 +275,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/local/import.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/message.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js" />
       </list>
     </option>
   </component>
@@ -1298,13 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="7" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0">
@@ -1326,30 +1319,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="22" selection-start="2167" selection-end="2167" vertical-scroll-proportion="-24.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1376,13 +1348,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/topic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="108" selection-start="905" selection-end="958" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/tableBodyView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="31" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
@@ -1390,9 +1355,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/views/formBoxView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="24" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/backbonedev.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="22" selection-start="2167" selection-end="2167" vertical-scroll-proportion="-39.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/topic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="108" selection-start="905" selection-end="958" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="64" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.58928573">
+        <state line="21" column="43" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/backbonedev/js/utils/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="26" selection-start="3771" selection-end="3771" vertical-scroll-proportion="0.947245">
           <folding />
         </state>
       </provider>

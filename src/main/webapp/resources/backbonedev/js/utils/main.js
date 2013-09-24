@@ -64,6 +64,7 @@ function appendMessages(url, tbody, titleId, currentCountElements) {
 }
 
 function deleteTopic(url, id) {
+    processing = false;
     $.getJSON(url + 'json/removeTitle/' + id, {}, function(data) {
         if (data.success) {
             updateTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
@@ -71,10 +72,12 @@ function deleteTopic(url, id) {
         else {
             warning($('.container'), timeWarning);
         }
+        processing = true;
     });
 }
 
 function deleteMessage(url, id) {
+    processing = false;
     $.getJSON(url + 'json/removeMessage/' + id, {}, function(data) {
         if (data.success) {
             updateMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
@@ -82,12 +85,14 @@ function deleteMessage(url, id) {
         else {
             warning($('.container'), timeWarning);
         }
+        processing = true;
     });
 }
 
 function clickCreateNewMessage(url, form) {
     currentDate = 0;
     var textSerializable = {'titleId': parseInt(appState.get("titleId")), 'textMessage' : $.trim($('.js-message-text').val())};
+    processing = false;
     $.postJSON(url+'json/messages', textSerializable, function(data) {
         if (data.success){
             $('.js-message-text').val('');
@@ -96,12 +101,14 @@ function clickCreateNewMessage(url, form) {
         else {
             warning($('.js-message-text'), timeWarning);
         }
+        processing = true;
     });
 }
 
 function clickCreateNewTopic(url, form) {
     currentDate = 0;
     var textSerializable = {'name' : $.trim($('.js-new-topic-name').val())};
+    processing = false;
     $.postJSON(url+'json/titles', textSerializable, function(data) {
         if (data.success){
             $('.js-new-topic-name').val('');
@@ -110,6 +117,7 @@ function clickCreateNewTopic(url, form) {
         else {
             warning($('.js-new-topic-name'), timeWarning);
         }
+        processing = true;
     });
 }
 

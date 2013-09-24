@@ -19,7 +19,7 @@ function appendMessage(url, tbody, createtime, name, id, end) {
                         '</p>' +
                     '</td>' +
                  '</tr>');
-    if (endName == '') {
+    if (endName == '' && beginName.length < 63) {
         tbody.append('<tr>' +
             '<td class="' + end + '">' +
                 '<div class="js-message-' + id + '-begin begin-message crop span11 arial text-message">' + beginName + '</div>' +
