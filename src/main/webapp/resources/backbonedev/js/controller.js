@@ -14,13 +14,19 @@ var Controller = Backbone.Router.extend({
 });
 
 var controller = new Controller();
-var sem = false;
+var processing = false;
+var nicescroll;
 Backbone.history.start();
+var messageTails = {};
 
 $(function(){
-    var scroll = $("html").niceScroll();
-    $("html").niceScroll().scrollend(function(info) {
-        if (scroll.scrollvaluemax <= (scroll.scroll.y + 50)) {
+    nicescroll = $("html").niceScroll();
+    $(document).scroll(function() {
+        if (processing) {
+            return false;
+        }
+        if ($(window).scrollTop() >= ($(document).height() - $(window).height())*0.75) {
+            processing = true;
             if (appState.get("state") == "topics") {
                 appendTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
             }

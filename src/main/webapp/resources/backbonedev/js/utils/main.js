@@ -1,8 +1,24 @@
 var orderTitles = 0;
 var currentDate = 0;
-var currentCountElements = 10;
+var currentCountElements = 15;
 var currentCountMessages = 0;
+var timeWarning = 500;
 var url = prefixUrl();
+var warningRun = false;
+
+function warning(elem, timeWarning) {
+    if (warningRun == false) {
+        warningRun = true;
+        var cssOld = elem.css('border');
+        elem.css('border', '2px solid #FF0000');
+        setTimeout(function(){
+                elem.css('border', cssOld);
+                warningRun = false;
+            },
+            timeWarning
+        );
+    }
+}
 
 function updateTopics(url, tbody, currentCountElements, orderTitles) {
     currentDate = 0;
@@ -18,8 +34,10 @@ function appendTopics(url, tbody, currentCountElements, orderTitles) {
             currentDate = parseInt(data.endDate);
         }
         else {
-            alert('incorrect get');
+            warning($('.container'), timeWarning);
         }
+        processing = false;
+        nicescroll.resize();
     });
 }
 
@@ -38,8 +56,10 @@ function appendMessages(url, tbody, titleId, currentCountElements) {
             currentDate = parseInt(data.endDate);
         }
         else {
-            alert('incorrect get');
+            warning($('.container'), timeWarning);
         }
+        processing = false;
+        nicescroll.resize();;
     });
 }
 
@@ -49,7 +69,7 @@ function deleteTopic(url, id) {
             updateTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
         }
         else {
-            alert('incorrect get');
+            warning($('.container'), timeWarning);
         }
     });
 }
@@ -60,51 +80,37 @@ function deleteMessage(url, id) {
             updateMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
         }
         else {
-            alert('incorrect get');
+            warning($('.container'), timeWarning);
         }
     });
 }
 
 function clickCreateNewMessage(url, form) {
     currentDate = 0;
-    var textSerializable = {'titleId': parseInt(appState.get("titleId")), 'textMessage' : $('.js-message-text').val()};
+    var textSerializable = {'titleId': parseInt(appState.get("titleId")), 'textMessage' : $.trim($('.js-message-text').val())};
     $.postJSON(url+'json/messages', textSerializable, function(data) {
         if (data.success){
             $('.js-message-text').val('');
             updateMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
         }
         else {
-            var error = "Error: " + data.errors[0];
-            alert(error);
+            warning($('.js-message-text'), timeWarning);
         }
     });
 }
 
 function clickCreateNewTopic(url, form) {
     currentDate = 0;
-    var textSerializable = {'name' : $('.js-new-topic-name').val()};
+    var textSerializable = {'name' : $.trim($('.js-new-topic-name').val())};
     $.postJSON(url+'json/titles', textSerializable, function(data) {
         if (data.success){
             $('.js-new-topic-name').val('');
             updateTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
         }
         else {
-            var error = "Error: " + data.errors[0];
-            alert(error);
+            warning($('.js-new-topic-name'), timeWarning);
         }
     });
-}
-
-function scrollTopic(url, objectScroll) {
-    if ((objectScroll[0].scrollTop + objectScroll[0].clientHeight) / objectScroll[0].scrollHeight > 0.95) {
-        appendTopics(url, $('.js-table-body'), currentCountElements, orderTitles);
-    }
-}
-
-function scrollMessage(url, objectScroll) {
-    if ((objectScroll[0].scrollTop + objectScroll[0].clientHeight) / objectScroll[0].scrollHeight > 0.95) {
-        appendMessages(url, $('.js-table-body'), parseInt(appState.get("titleId")), currentCountElements);
-    }
 }
 
 

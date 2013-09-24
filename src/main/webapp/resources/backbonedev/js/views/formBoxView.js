@@ -17,8 +17,17 @@ var FormBoxView = Backbone.View.extend({
         return this;
     },
     events: {
+        "keypress .js-message-text" : "key_press",
         "click .js-send-message-btn": "send",
         "click .js-create-topic-btn": "create"
+    },
+
+    key_press: function (event) {
+        var keyCode = (event.which ? event.which : event.keyCode);
+        if (keyCode === 10 || keyCode == 13 && event.ctrlKey) {
+            this.send();
+        }
+        return true;
     },
     send: function() {
         clickCreateNewMessage(url, this.$('.js-message-form'))

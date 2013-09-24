@@ -10,8 +10,8 @@ insert into title(id, name, createDate, lastUpdateDate) values(9, 'Test9', 3, 3)
 insert into title(id, name, createDate, lastUpdateDate) values(10, 'Test10', 2, 3);
 insert into title(id, name, createDate, lastUpdateDate) values(11, 'Test11', 3, 3);
 insert into title(id, name, createDate, lastUpdateDate) values(12, 'Test12', 2, 3);
-insert into message(id, createDate, titleId, body) values(1, 1, 1, 'Message1');
-insert into message(id, createDate, titleId, body) values(2, 1, 1, 'Message2');
+insert into message(id, createDate, titleId, body) values(1, 2, 1, 'Message1');
+insert into message(id, createDate, titleId, body) values(2, 2, 1, 'Message2');
 insert into message(id, createDate, titleId, body) values(3, '2013-09-11 10:00:19', 1, 'Message3');
 insert into message(id, createDate, titleId, body) values(4, '2013-09-11 10:00:19', 1, 'Message4');
 insert into message(id, createDate, titleId, body) values(5, '2013-09-11 10:00:19', 1, 'Message5');
