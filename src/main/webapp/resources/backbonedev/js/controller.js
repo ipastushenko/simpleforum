@@ -1,3 +1,5 @@
+var processing = false;
+
 var Controller = Backbone.Router.extend({
     routes: {
         "": "topics",
@@ -6,15 +8,18 @@ var Controller = Backbone.Router.extend({
     },
 
     topics: function() {
+        processing = false;
         appState.set({state:"topics"});
+        processing = true;
     },
     messages: function(titleId) {
+        processing = false;
         appState.set({state:"messages", titleId:titleId});
+        processing = true;
     }
 });
 
 var controller = new Controller();
-var processing = false;
 var nicescroll;
 Backbone.history.start();
 var messageTails = {};
