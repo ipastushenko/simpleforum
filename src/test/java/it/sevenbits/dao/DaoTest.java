@@ -33,7 +33,7 @@ public class DaoTest {
     @Test(expected = DAOException.class)
     @Transactional
     public void deleteMessages() throws DAOException {
-        MessageEntity messageEntity = messageDao.findById(new Long(1));
+        Message messageEntity = messageDao.findById(new Long(1));
         TitleEntity titleEntity = titleDao.findById(new Long(1));
         titleDao.delete(titleEntity);
         titleDao.delete(titleEntity);
@@ -59,7 +59,7 @@ public class DaoTest {
             TitleEntity titleEntity = titleDao.findById(i);
             assertNotNull(titleEntity);
             titleDao.delete(titleEntity);
-            List<MessageEntity> messageEntityList = messageDao.findByTitleId(i);
+            List<Message> messageEntityList = messageDao.findByTitleId(i);
             assertEquals(messageEntityList.size(), 0);
         }
         List<TitleEntity> listTitleEntities = titleDao.findAll();
@@ -72,7 +72,7 @@ public class DaoTest {
         titleEntity = titleDao.findById(new Long(2));
 
         //titleDao.findById(new Long(1)));
-        //List<MessageEntity> listMessageEntities = messageDao.findByTitleId(new Long(1));
+        //List<Message> listMessageEntities = messageDao.findByTitleId(new Long(1));
         //
     }     */
 }

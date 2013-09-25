@@ -28,7 +28,7 @@ import java.util.List;
  * @author Ivan Pastushenko @ sevenbits
  * @version 1.0.0 09.02.2013
  */
-@Repository(value = "messageDao")
+//@Repository(value = "messageDao")
 @Transactional
 public class MessageDaoHibernate implements MessageDao {
     private HibernateTemplate hibernateTemplate;

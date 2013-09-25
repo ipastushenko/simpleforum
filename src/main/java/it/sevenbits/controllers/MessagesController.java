@@ -9,6 +9,7 @@ import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.SendMessageForm;
 import it.sevenbits.jsonmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import javax.validation.ConstraintViolation;
@@ -30,8 +31,9 @@ import it.sevenbits.dao.MessageDao;
 public class MessagesController {
     @Resource(name="messageDao")
     private MessageDao messageDao;
-    @Resource(name="titleDao")
+    @Resource(name="titileDao")
     private TitleDao titleDao;
+
     @Autowired
     private Validator validator;
 

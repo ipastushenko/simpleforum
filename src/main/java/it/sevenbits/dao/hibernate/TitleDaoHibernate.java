@@ -27,7 +27,7 @@ import java.util.List;
  * @author Ivan Pastushenko @ sevenbits
  * @version 1.0.0 09.02.2013
  */
-@Repository(value = "titleDao")
+//@Repository(value = "titleDao")
 @Transactional
 public class TitleDaoHibernate implements TitleDao {
     private HibernateTemplate hibernateTemplate;

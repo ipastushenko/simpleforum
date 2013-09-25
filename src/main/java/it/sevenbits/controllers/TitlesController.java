@@ -8,6 +8,7 @@ import it.sevenbits.entity.hibernate.TitleEntity;
 import it.sevenbits.forms.AddTitleForm;
 import it.sevenbits.jsonmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,8 +30,9 @@ import java.util.*;
  */
 @Controller
 public class TitlesController {
-    @Resource(name="titleDao")
+    @Resource(name="titileDao")
     private TitleDao titleDao;
+
     @Autowired
     private Validator validator;
 

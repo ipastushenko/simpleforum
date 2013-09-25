@@ -1,7 +1,6 @@
 package it.sevenbits.entity.hibernate;
 
 import it.sevenbits.entity.Message;
-import it.sevenbits.entity.Title;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -36,7 +35,7 @@ public class MessageEntity extends Message implements Serializable {
         this.titleEntity = titleEntity;
     }
 
-    @ManyToOne( cascade = {CascadeType.MERGE, CascadeType.PERSIST} )
+    @ManyToOne( cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name="titleId", nullable = false)
     public TitleEntity getTitleEntity() {
         return titleEntity;
